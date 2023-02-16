@@ -28,8 +28,8 @@ in {
     fonts.fontDir.enable = true;
     fonts.fonts = with pkgs; [
         nerdfonts
-        #jetbrains-mono
         new-rodin
+        xdg-utils
     ];
 
     environment = {
