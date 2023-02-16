@@ -29,7 +29,6 @@ in {
     fonts.fonts = with pkgs; [
         nerdfonts
         new-rodin
-        xdg-utils
     ];
 
     environment = {
@@ -46,6 +45,7 @@ in {
             pciutils
             usbutils
             wget
+            xdg-utils
         ];
     };
 
