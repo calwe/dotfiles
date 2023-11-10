@@ -1,1 +1,5 @@
+alias cm='chezmoi'
+
+export EDITOR=nvim
+
 eval "$(starship init zsh)"
