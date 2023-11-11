@@ -1,5 +1,5 @@
 {
-    "height": 40,
+    "height": 60,
     "spacing": 4,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["custom/spotify"],

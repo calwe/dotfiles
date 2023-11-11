@@ -1,5 +1,3 @@
-source .zshrc.secrets
-
 alias cm='chezmoi'
 
 export EDITOR=nvim
