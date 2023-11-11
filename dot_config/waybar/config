@@ -1,0 +1,48 @@
+{
+    "height": 40,
+    "spacing": 4,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/spotify"],
+    "modules-right": ["battery", "clock"],
+    // modules-left
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        },
+        "sort-by-number": true
+    },
+    // modules-center
+    "custom/spotify": {
+        "format": "  {}",
+        "return-type": "json",
+        "on-click-right": "spotifatius toggle-liked",
+        "exec": "spotifatius monitor"
+    },
+    // modules-right
+    "clock": {
+        "format": "{:%F | %T}",
+        "interval": 1
+    },
+    "battery": {
+        "bat": "BAT1",
+        "interval": 1,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}   {capacity}% |",
+        "format-charging": "   {capacity}% |",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "max-length": 25
+    }
+}
