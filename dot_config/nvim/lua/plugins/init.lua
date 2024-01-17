@@ -1,8 +1,5 @@
 return {
 	"neovim/nvim-lspconfig",
-	{ 
-        "catppuccin/nvim", 
-        name = "catppuccin", 
-        priority = 1000,
-    }
+    "nvim-treesitter/nvim-treesitter",
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 }
