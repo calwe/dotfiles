@@ -18,6 +18,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 vim.cmd.colorscheme "catppuccin"
+
 vim.o.guifont = "Monaspace Argon:h16"
 vim.opt.linespace = -2
 
