@@ -1,5 +1,9 @@
 alias cm='chezmoi'
 
 export EDITOR=nvim
+export LEDGER_FILE=~/finance/hledger.journal
 
 eval "$(starship init zsh)"
+
+# opam configuration
+[[ ! -r /home/callum/.opam/opam-init/init.zsh ]] || source /home/callum/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
