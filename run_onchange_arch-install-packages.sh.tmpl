@@ -1,0 +1,20 @@
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+#!/bin/bash
+
+{{- if .packages.arch.official }}
+OFFICIAL_PACKAGES='{{ range .packages.arch.official }}{{ . }} {{ end }}'
+if [ -n "$OFFICIAL_PACKAGES" ]; then
+  echo "Installing official packages..."
+  sudo pacman -S --noconfirm --needed $OFFICIAL_PACKAGES
+fi
+{{- end }}
+
+{{- if .packages.arch.aur }}
+AUR_PACKAGES='{{ range .packages.arch.aur }}{{ . }} {{ end }}'
+if [ -n "$AUR_PACKAGES" ]; then
+  echo "Installing AUR packages..."
+  paru -S --noconfirm --needed $AUR_PACKAGES
+fi
+{{- end }}
+
+{{ end -}}

@@ -1,0 +1,51 @@
+{
+    "layer": "top",
+    "modules-left": [
+        "custom/distro",
+        "custom/right_inv#1",
+        "clock#1",
+        "custom/right_div#1",
+        "clock#2",
+        "custom/right_div#2" 
+    ],
+    "modules-center": [
+        "custom/left_div#1",
+        "ext/workspaces",
+        "custom/right_div#3"
+    ],
+    "height": 0,
+	"width": 0,
+	"margin": 0,
+
+    "custom/distro": {
+        "format": ""
+    },
+    "clock#1": {
+        "format": "{:%a %d %b}"
+    },
+    "clock#2": {
+        "format": "{:%T}"
+    },
+
+    "ext/workspaces": {
+        "format": ""
+    },
+
+    "custom/right_div#1": {
+        "format": ""
+    },
+    "custom/right_div#2": {
+        "format": ""
+    },
+    "custom/right_div#3": {
+        "format": ""
+    },
+    "custom/right_inv#1": {
+        "format": ""
+    },
+
+    "custom/left_div#1": {
+        "format": ""
+    }
+}
+

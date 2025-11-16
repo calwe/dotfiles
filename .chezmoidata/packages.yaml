@@ -1,0 +1,17 @@
+packages:
+  arch:
+    official:
+    - 'chromium'
+    - 'tmux'
+    - 'neovim'
+    - 'bitwarden-cli'
+    - 'rofi'
+    - 'mako'
+    - 'waybar'
+    - 'swaybg'
+    - 'swaylock'
+    - 'swayidle'
+    - 'xwayland-satellite'
+    aur:
+    - 'zen-browser-bin'
+    - 'chromium-widevine'
