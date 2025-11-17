@@ -12,6 +12,12 @@ packages:
     - 'swaylock'
     - 'swayidle'
     - 'xwayland-satellite'
+    - 'bluez'
+    - 'bluez-utils'
+    - 'brightnessctl'
+    - 'fzf'
+    - 'networkmanager'
+    - 'pacman-contrib'
     aur:
     - 'zen-browser-bin'
     - 'chromium-widevine'

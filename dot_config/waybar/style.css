@@ -1,101 +1,12 @@
-@define-color base            #191724;
-@define-color surface         #1f1d2e;
-@define-color overlay         #26233a;
-
-@define-color muted           #6e6a86;
-@define-color subtle          #908caa;
-@define-color text            #e0def4;
-
-@define-color love            #eb6f92;
-@define-color gold            #f6c177;
-@define-color rose            #ebbcba;
-@define-color pine            #31748f;
-@define-color pineInactive    #233942;
-@define-color foam            #9ccfd8;
-@define-color iris            #c4a7e7;
-
-@define-color highlightLow    #21202e;
-@define-color highlightMed    #403d52;
-@define-color highlightHigh   #524f67;
-
+/* ignore GTK theme */
 * {
-    font-family: "BerkeleyMonoVariable Nerd Font";
-    font-size: 16px;
+	all: initial;
 }
 
-#waybar {
-    background-color: @base;
-    color: @text;
-}
-
-button {
-	border-radius: 16px;
-	min-width: 16px;
-	padding: 0 10px;
-}
-
-#custom-distro {
-    margin-left: 12px;
-    font-size: 20px;
-}
-
-#custom-right_inv.1 {
-    margin-left: 8px;
-    color: @highlightMed;
-}
-
-#clock.1 {
-    padding-left: 8px;
-    padding-right: 8px;
-    background-color: @highlightMed;
-}
-
-#custom-right_div.1 {
-    color: @highlightMed;
-    background-color: @overlay;
-}
-
-#clock.2 {
-    padding-left: 8px;
-    padding-right: 8px;
-    background-color: @overlay;
-}
-
-#custom-right_div.2 {
-    color: @overlay;
-}
-
-#custom-left_div.1 {
-    color: @foam;
-}
-
-#workspaces {
-    background-color: @foam;
-}
-
-#workspaces button {
-    color: @highlightMed;
-}
-
-#workspaces button.active {
-    color: @subtle;
-}
-
-#custom-right_div.3 {
-    color: @foam;
-}
-
-#custom-left_div,
-#custom-left_inv,
-#custom-right_div,
-#custom-right_inv {
-    font-size: 22px;
-}
-
-.module,
-#custom-left_div,
-#custom-left_inv,
-#custom-right_div,
-#custom-right_inv {
-	margin-top: -1px;
-}
+@import "theme.css";
+@import "styles/fonts.css";
+@import "styles/global.css";
+@import "styles/modules-center.css";
+@import "styles/modules-left.css";
+@import "styles/modules-right.css";
+@import "styles/states.css";
