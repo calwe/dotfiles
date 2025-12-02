@@ -34,6 +34,37 @@ output "HDMI-A-1" {
 }
 {{- end }}
 
+{{- if eq .chezmoi.hostname "SCLT465" }}
+output "DP-6" {
+    mode "2560x1440@143.999"
+    scale 1
+    transform "normal"
+    position x=1920 y=0
+}
+
+output "DP-7" {
+    mode "1920x1080@60.000"
+    scale 1
+    transform "normal"
+    position x=3626 y=0
+}
+
+output "DP-10" {
+    mode "1920x1200@59.950"
+    scale 1
+    transform "normal"
+    position x=1706 y=0
+}
+
+output "eDP-1" {
+    mode "2560x1600@60.039"
+    scale 1.5
+    transform "normal"
+    //position x=4480 y=0
+    position x=0 y=0
+}
+{{- end }}
+
 layout {
     gaps 10
 

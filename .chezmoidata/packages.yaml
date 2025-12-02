@@ -5,6 +5,7 @@ packages:
     - 'tmux'
     - 'neovim'
     - 'bitwarden-cli'
+    - 'niri'
     - 'rofi'
     - 'mako'
     - 'waybar'
