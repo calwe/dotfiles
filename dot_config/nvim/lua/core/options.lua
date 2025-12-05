@@ -1,4 +1,5 @@
 local opts = {
+    termguicolors = true,
 	shiftwidth = 4,
 	tabstop = 4,
 	expandtab = true,
