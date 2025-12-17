@@ -1,0 +1,11 @@
+name: tideperfect
+root: ~/dev/rust/tideperfect/
+
+windows:
+  - tideperfect: nvim
+  - tidalrs: 
+      root: ~/dev/rust/tidalrs/
+      panes: 
+        - nvim
+  - lazygit: lazygit
+  - terminal:

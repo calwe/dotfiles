@@ -1,0 +1,35 @@
+-- Rust configuration moved to lsp.lua to avoid lazy.nvim plugin conflicts
+-- Having multiple plugin specs for 'neovim/nvim-lspconfig' causes issues
+return {
+    -- {
+    --     'neovim/nvim-lspconfig',
+    --     ft = { 'rust' },
+    --     config = function()
+    --         require('lspconfig').rust_analyzer.setup({
+    --             on_attach = function(client, bufnr)
+    --                 print('rust-analyzer attached to buffer ' .. bufnr)
+    --             end,
+    --             on_init = function(client)
+    --                 print('rust-analyzer initialized')
+    --             end,
+    --             settings = {
+    --                 ['rust-analyzer'] = {
+    --                     check = {
+    --                         command = 'clippy',
+    --                     },
+    --                     cargo = {
+    --                         allFeatures = true,
+    --                     },
+    --                     procMacro = {
+    --                         enable = true,
+    --                     },
+    --                 },
+    --             },
+    --         })
+    --
+    --         if vim.bo.filetype == 'rust' then
+    --             vim.cmd('LspStart rust_analyzer')
+    --         end
+    --     end,
+    -- },
+}

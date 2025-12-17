@@ -1,0 +1,8 @@
+name: spot2tidal
+root: ~/dev/go/spot2tidal/
+
+windows:
+  - editor: nvim
+  - lazygit: lazygit
+  - terminal:
+  - claude: claude

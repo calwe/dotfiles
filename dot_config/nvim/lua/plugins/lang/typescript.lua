@@ -26,10 +26,25 @@ return {
         },
       },
     },
+    config = function(_, opts)
+      require("typescript-tools").setup(opts)
+
+      -- Set 2 space indentation for TypeScript/JavaScript files
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+        callback = function()
+          vim.opt_local.tabstop = 2
+          vim.opt_local.shiftwidth = 2
+          vim.opt_local.softtabstop = 2
+          vim.opt_local.expandtab = true
+        end,
+      })
+    end,
   },
   {
     'esmuellert/nvim-eslint',
     ft = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
     opts = {},
   },
+  -- Note: tailwindcss LSP is configured in lsp.lua to avoid duplicate specs
 }
