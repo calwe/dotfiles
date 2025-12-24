@@ -28,7 +28,5 @@ packages:
     aur:
     - 'zen-browser-bin'
     - 'chromium-widevine'
-    - 'spicetify-cli'
-    - 'spicetify-marketplace-bin'
     - 'emmet-language-server'
     - 'tmuxinator'

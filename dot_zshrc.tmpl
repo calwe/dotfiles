@@ -1,15 +1,307 @@
+# ============================================
+# SECTION 1: Oh-My-Zsh Core Configuration
+# ============================================
 export ZSH="$HOME/.oh-my-zsh"
 
+# Oh-My-Zsh plugins
+plugins=(
+  git
+  fzf
+  tmux
+  tmuxinator
+  docker
+  docker-compose
+  golang
+  rust
+  colored-man-pages
+  command-not-found
+  sudo
+  extract
+)
+
+# ============================================
+# SECTION 2: Machine-Specific Configuration
+# ============================================
 {{- if eq .chezmoi.hostname "SCLT465" }}
+# Work machine configuration
 export REPOS_ROOT_DIR="/home/callum/isis"
 alias dci="docker compose -f ~/isis/docker-orchestration/docker-compose-linux.yml"
 {{- end }}
 
-plugins=(git)
+{{- if eq .chezmoi.hostname "banana" }}
+# Personal machine configuration
+{{- end }}
+
+# ============================================
+# SECTION 3: Environment Variables
+# ============================================
 export EDITOR="nvim"
+export VISUAL="nvim"
+export GOPATH="$HOME/go"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/lib:/usr/bin:/usr/lib:$LD_LIBRARY_PATH"
 
-alias vim=nvim
+# ============================================
+# SECTION 4: History Configuration
+# ============================================
+HISTSIZE=50000
+SAVEHIST=50000
+HISTFILE=~/.zsh_history
 
+# Share history between sessions immediately
+setopt SHARE_HISTORY
+
+# Append to history file instead of replacing it
+setopt APPEND_HISTORY
+
+# Add timestamps to history
+setopt EXTENDED_HISTORY
+
+# Remove older duplicate entries from history
+setopt HIST_IGNORE_ALL_DUPS
+
+# Remove superfluous blanks from history
+setopt HIST_REDUCE_BLANKS
+
+# Don't record commands starting with space
+setopt HIST_IGNORE_SPACE
+
+# Don't save duplicate entries
+setopt HIST_SAVE_NO_DUPS
+
+# ============================================
+# SECTION 5: Completion Configuration
+# ============================================
+# Enable case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Use menu selection for completions
+zstyle ':completion:*' menu select
+
+# Cache completions for better performance
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+# Group completions by type
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '%B%d%b'
+
+# Enable partial completion (foo.ba -> foo.bar)
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+# Completion for kill command
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+
+# ============================================
+# SECTION 6: Aliases
+# ============================================
+
+# Editor
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+
+# LS aliases with colors
+alias ls="ls --color=auto"
+alias ll="ls -lh"
+alias la="ls -lAh"
+alias l="ls -CF"
+alias lsa="ls -a"
+
+# Directory navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Grep with color
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+# Human-readable sizes
+alias df="df -h"
+alias du="du -h"
+alias free="free -h"
+
+# Safety nets
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+
+# Git shortcuts (in addition to oh-my-zsh git plugin)
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git pull"
+alias gd="git diff"
+alias gco="git checkout"
+alias gb="git branch"
+alias glog="git log --oneline --decorate --graph"
+
+# Arch Linux package management
+alias pacup="sudo pacman -Syu"
+alias pacin="sudo pacman -S"
+alias pacrem="sudo pacman -Rns"
+alias pacsearch="pacman -Ss"
+alias pacclean="sudo pacman -Sc"
+alias paruup="paru -Syu"
+alias paruin="paru -S"
+
+# Chezmoi shortcuts
+alias cz="chezmoi"
+alias cza="chezmoi apply"
+alias czd="chezmoi diff"
+alias cze="chezmoi edit"
+
+# Utilities
+alias myip="curl -s http://ipecho.net/plain; echo"
+alias ports="netstat -tulanp"
+alias week="date +%V"
+alias timer="echo 'Timer started. Stop with Ctrl-D.' && date && time cat && date"
+
+# ============================================
+# SECTION 7: Functions
+# ============================================
+
+# Create directory and cd into it
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# Extract archives with automatic detection
+ex() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"   ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1";;
+      *.7z)        7z x "$1"      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Find and kill process by name
+killnamed() {
+  ps aux | grep -v grep | grep "$1" | awk '{print $2}' | xargs kill -9
+}
+
+# Quick find
+qfind() {
+  find . -name "*$1*"
+}
+
+# Chezmoi add and edit
+czae() {
+  chezmoi add "$1" && chezmoi edit "$1"
+}
+
+# ============================================
+# SECTION 8: Key Bindings
+# ============================================
+
+# Better word navigation
+bindkey '^[[1;5C' forward-word                    # Ctrl+Right
+bindkey '^[[1;5D' backward-word                   # Ctrl+Left
+
+# Home and End keys
+bindkey '^[[H' beginning-of-line                  # Home
+bindkey '^[[F' end-of-line                        # End
+
+# Delete key
+bindkey '^[[3~' delete-char                       # Delete
+
+# Search history with up/down arrows
+bindkey '^[[A' history-search-backward            # Up arrow
+bindkey '^[[B' history-search-forward             # Down arrow
+
+# ============================================
+# SECTION 9: External Integrations
+# ============================================
+
+# Load Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
+
+# Load zsh-autosuggestions
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+# Load zsh-syntax-highlighting (must be loaded after other plugins)
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# FZF configuration
+if [ -f /usr/share/fzf/key-bindings.zsh ]; then
+  source /usr/share/fzf/key-bindings.zsh
+fi
+
+if [ -f /usr/share/fzf/completion.zsh ]; then
+  source /usr/share/fzf/completion.zsh
+fi
+
+# FZF options
+export FZF_DEFAULT_OPTS="
+  --height 40%
+  --layout=reverse
+  --border
+  --inline-info
+  --preview 'file {}' --preview-window down:3:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
+  --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
+  --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796
+"
+
+# Use fd if available for faster file search
+if command -v fd &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
+fi
+
+# Initialize starship prompt
 eval "$(starship init zsh)"
 
+# ============================================
+# Additional Options
+# ============================================
+
+# Disable terminal beep
+unsetopt BEEP
+
+# Enable correction for commands (be careful with this)
+setopt CORRECT
+
+# Auto CD (typing directory name cds into it)
+setopt AUTO_CD
+
+# Auto pushd (cd adds to directory stack)
+setopt AUTO_PUSHD
+
+# Don't push duplicate directories
+setopt PUSHD_IGNORE_DUPS
+
+# Make pushd silent
+setopt PUSHD_SILENT
+
+# Set umask for file permissions
+umask 022
