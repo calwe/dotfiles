@@ -1,0 +1,33 @@
+colors:
+  base:           "#282a36"
+  surface:        "#21222c"
+  midpoint:       "#252630"
+  overlay:        "#44475a"
+  muted:          "#6272a4"
+  subtle:         "#7a8ba6"
+  text:           "#f8f8f2"
+  red:            "#ff5555"
+  yellow:         "#f1fa8c"
+  green:          "#50fa7b"
+  teal:           "#8be9fd"
+  blue:           "#6272a4"
+  purple:         "#bd93f9"
+  accent:         "#bd93f9"
+  highlight_low:  "#21222c"
+  highlight_mid:  "#44475a"
+  highlight_high: "#626483"
+
+neovim:
+  plugin:      "Mofiqul/dracula.nvim"
+  name:        "dracula"
+  colorscheme: "dracula"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       ""
+
+tmux:
+  plugin: "dracula/tmux"
+  use_evergarden: false
+  style: ""
+  vars: {}

@@ -40,6 +40,7 @@ export VISUAL="nvim"
 export GOPATH="$HOME/go"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/lib:/usr/bin:/usr/lib:$LD_LIBRARY_PATH"
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # ============================================
 # SECTION 4: History Configuration
@@ -266,9 +267,9 @@ export FZF_DEFAULT_OPTS="
   --inline-info
   --preview 'file {}' --preview-window down:3:wrap
   --bind 'ctrl-/:toggle-preview'
-  --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796
-  --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6
-  --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796
+  --color=bg+:{{ .colors.overlay }},bg:{{ .colors.base }},spinner:{{ .colors.accent }},hl:{{ .colors.red }}
+  --color=fg:{{ .colors.text }},header:{{ .colors.red }},info:{{ .colors.purple }},pointer:{{ .colors.accent }}
+  --color=marker:{{ .colors.accent }},fg+:{{ .colors.text }},prompt:{{ .colors.purple }},hl+:{{ .colors.red }}
 "
 
 # Use fd if available for faster file search
@@ -277,6 +278,10 @@ if command -v fd &> /dev/null; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
 fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # Initialize starship prompt
 eval "$(starship init zsh)"

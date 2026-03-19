@@ -2,175 +2,134 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Overview
+## Repository Overview
 
-This is a chezmoi-managed dotfiles repository for Arch Linux systems. It manages configuration files for Neovim, Niri (Wayland compositor), shell environment, and various other tools. The repository uses Go templates to support multiple machines with different configurations.
+This is a personal dotfiles repository managed by **chezmoi**, a dotfile management tool that uses templates and supports multiple machines with different configurations.
 
-**Repository Location**: `/home/callum/.local/share/chezmoi/`
+## Important Rules for Claude Code
 
-## Chezmoi Architecture
+When working in this repository:
+- **DO NOT run `chezmoi apply`** - The user will run this themselves when ready
+- **DO NOT use `chezmoi edit`** - Edit source files directly in this repository instead
+- **When editing config files, edit the source files visible in this repo** (e.g., `dot_config/nvim/lua/plugins/telescope.lua`) rather than the target files in the home directory
 
-### File Naming Conventions
+## Key Concepts
 
-Chezmoi uses special prefixes to transform file names when applying:
+### Chezmoi Naming Convention
 
-- `dot_` → `.` (creates dotfiles, e.g., `dot_zshrc` → `.zshrc`)
-- `.tmpl` suffix → Go template processed before applying
-- `run_once_` → Script runs once (tracked via state file)
-- `run_onchange_` → Script runs when content hash changes
+Files in this repository follow chezmoi's special naming convention:
+- `dot_` prefix → `.` (e.g., `dot_gitconfig` becomes `.gitconfig`)
+- `.tmpl` suffix → Template files processed with Go templates
+- `run_once_` prefix → Scripts that run once during `chezmoi apply`
+- `run_onchange_` prefix → Scripts that run when their content changes
+- `executable_` prefix → Makes the file executable
 
-Examples:
-- `dot_config/nvim/init.lua` → `~/.config/nvim/init.lua`
-- `dot_zshrc.tmpl` → `~/.zshrc` (template processed)
-- `run_onchange_arch-install-packages.sh.tmpl` → Runs when packages.yaml changes
+### Configuration Structure
 
-### Template System
+- **`chezmoi.toml`** - Main chezmoi configuration (Bitwarden integration)
+- **`.chezmoidata/packages.yaml`** - Package lists for different distros (currently Arch Linux)
+- **`.chezmoiexternal.toml`** - External dependencies fetched by chezmoi (e.g., tmux plugin manager)
+- **`dot_gitconfig.tmpl`** - Git config template with hostname-based email configuration
 
-Templates use Go's text/template syntax with chezmoi data:
+## Common Commands
 
-**Available Variables**:
-- `.chezmoi.hostname` - Machine hostname (e.g., "banana", "SCLT465")
-- `.chezmoi.osRelease.id` - OS identifier (e.g., "arch")
-- `.packages` - Custom data from `.chezmoidata/packages.yaml`
+### Apply Changes to System
+```bash
+# Preview what would change
+chezmoi diff
 
-**Common Patterns**:
-```go
-{{- if eq .chezmoi.hostname "banana" }}
-# Personal machine config
-{{- end }}
+# Apply all changes
+chezmoi apply
 
-{{- if eq .chezmoi.hostname "SCLT465" }}
-# Work machine config
-{{- end }}
-
-{{ range .packages.arch.official }}{{ . }} {{ end }}
+# Apply with verbose output
+chezmoi apply -v
 ```
 
-### Data Files
+### Editing Files
+```bash
+# Edit a dotfile (automatically handles chezmoi naming)
+chezmoi edit ~/.config/nvim/init.lua
 
-**`.chezmoidata/packages.yaml`**: Package definitions for automated installation
-- `packages.arch.official` - Pacman packages
-- `packages.arch.aur` - AUR packages (installed via paru)
+# Edit in the source directory directly
+cd ~/.local/share/chezmoi
+# Edit files with dot_ prefix, etc.
+```
 
-**`.chezmoiexternal.toml`**: External git repositories (e.g., tmux plugin manager)
+### Testing Templates
+```bash
+# Execute template and preview output
+chezmoi execute-template < dot_gitconfig.tmpl
 
-**`chezmoi.toml`**: Chezmoi configuration (Bitwarden integration enabled)
+# See what data is available for templates
+chezmoi data
+```
 
-## Common Development Tasks
+### Package Management Script
+```bash
+# The run_onchange_arch-install-packages.sh.tmpl script automatically:
+# - Installs official Arch packages via pacman
+# - Installs AUR packages via paru
+# - Runs when .chezmoidata/packages.yaml changes
+```
 
-### Testing Configuration Changes
+### Add New Files
+```bash
+# Add existing file from home directory
+chezmoi add ~/.config/some-app/config
 
-**IMPORTANT**: You are already working in the chezmoi source directory. Changes made here ARE the source of truth.
+# Add as template
+chezmoi add --template ~/.gitconfig
+```
 
-1. Edit files directly in `/home/callum/.local/share/chezmoi/`
-2. Apply changes: `chezmoi apply`
-3. Preview what would change: `chezmoi diff`
-4. Verify template rendering: `chezmoi execute-template < file.tmpl`
+## Architecture
 
-### Adding New Packages
+### Template Variables
 
+Templates use Go template syntax and have access to:
+- `{{ .chezmoi.hostname }}` - Current machine hostname
+- `{{ .chezmoi.osRelease.id }}` - OS identifier (e.g., "arch")
+- `{{ .packages }}` - Package lists from `.chezmoidata/packages.yaml`
+
+### Machine-Specific Configuration
+
+The repository supports multiple machines:
+- **banana** - Personal machine (uses spikywebb@gmail.com)
+- **SCLT465** - Work laptop (uses callum.webb@stfc.ac.uk)
+
+Configuration adapts based on hostname detection in templates.
+
+### Application Configurations
+
+Major applications configured:
+- **Neovim** - Modern Vim config with lazy.nvim plugin manager (`dot_config/nvim/`)
+  - Plugins auto-loaded from `lua/plugins/` directory
+  - Uses rose-pine theme
+  - LSP configuration via `lsp.lua` and `blink.lua`
+- **Niri** - Wayland compositor config (`dot_config/niri/config.kdl.tmpl`)
+- **Waybar** - Status bar with modular configuration (`dot_config/waybar/`)
+- **Kitty** - Terminal emulator with rose-pine theme
+- **tmux** - Terminal multiplexer with TPM (Tmux Plugin Manager)
+- **Spicetify** - Spotify theming tool
+
+### Neovim Plugin Structure
+
+Neovim uses lazy.nvim for plugin management:
+- Leader key is set to Space
+- Plugin specs are auto-loaded from `dot_config/nvim/lua/plugins/`
+- Each plugin has its own file (e.g., `telescope.lua`, `lsp.lua`)
+- Core configuration in `lua/core/` (options, keymaps, lazy setup)
+
+## Working with This Repository
+
+When modifying dotfiles:
+1. Edit files in the chezmoi source directory (`~/.local/share/chezmoi`)
+2. Use proper prefixes (`dot_`, `executable_`, etc.)
+3. Use `.tmpl` suffix when file needs template variables
+4. Test with `chezmoi diff` before applying
+5. Commit changes to git and push to remote
+
+When adding packages:
 1. Edit `.chezmoidata/packages.yaml`
-2. Add package to `packages.arch.official` or `packages.arch.aur`
-3. The `run_onchange_arch-install-packages.sh.tmpl` script will automatically run on next `chezmoi apply`
-
-### Creating New Dotfiles
-
-1. Add file with appropriate prefix (e.g., `dot_newconfig`)
-2. Use `.tmpl` suffix if templating is needed
-3. Apply with `chezmoi apply`
-
-### Run Scripts
-
-**`run_once_*`**: One-time setup scripts
-- `run_once_install-zsh.sh` - Installs zsh, oh-my-zsh, and starship
-- `run_once_systemd-sway.sh` - Systemd service setup
-
-**`run_onchange_*`**: Scripts that re-run when content changes
-- `run_onchange_arch-install-packages.sh.tmpl` - Package installation (hash includes packages.yaml)
-- `run_onchange_install-rust.sh` - Rustup setup
-- `run_onchange_spicetify-install.sh` - Spotify theming setup
-
-## Configuration Structure
-
-### Managed Configurations
-
-**Shell**:
-- `dot_zshrc.tmpl` - Zsh configuration with oh-my-zsh and starship
-  - Machine-specific environment variables and aliases
-  - Work machine (SCLT465) has docker-compose aliases and ISIS paths
-
-**Git**:
-- `dot_gitconfig.tmpl` - Git user configuration
-  - Email and name vary by hostname (personal vs work)
-
-**Neovim**:
-- `dot_config/nvim/` - Full Neovim configuration (see dedicated CLAUDE.md at `/home/callum/.local/share/chezmoi/dot_config/nvim/CLAUDE.md`)
-- Lua-based with lazy.nvim plugin manager
-- Modular architecture with language-specific configs
-
-**Niri** (Wayland Compositor):
-- `dot_config/niri/config.kdl.tmpl` - Niri compositor configuration
-
-**Terminal**:
-- `dot_config/kitty/` - Kitty terminal with Rose Pine theme
-
-**Status Bar**:
-- `dot_config/waybar/` - Waybar modules and configuration
-- Modular JSON configs for battery, CPU, memory, etc.
-
-**Other Tools**:
-- `dot_config/tmux/` - tmux configuration
-- `dot_config/spicetify/` - Spotify theming (uses marketplace theme)
-- `dot_config/systemd/user/` - User systemd services
-
-### System Requirements
-
-**Base System**: Arch Linux
-
-**Required Packages**: Defined in `.chezmoidata/packages.yaml`
-- Shell: zsh, starship, fzf
-- Editor: neovim
-- Wayland: niri, waybar, rofi, mako, swaybg, swaylock, swayidle
-- Browsers: chromium, zen-browser-bin
-- Development: rustup, typescript-language-server, go, gopls
-- Tools: tmux, bitwarden-cli, bluez, brightnessctl, networkmanager
-
-**AUR Helper**: paru (must be installed manually before running package scripts)
-
-## Git Workflow
-
-### Branch Structure
-
-- **Main Branch**: `main` (use for PRs)
-- Repository is personal, so direct commits to main are acceptable
-
-### Committing Changes
-
-After making changes to dotfiles:
-1. Stage files: `git add <files>`
-2. Commit with descriptive message
-3. Push to remote: `git push`
-
-No special chezmoi commands are needed for git operations - this is a normal git repository.
-
-## Machine-Specific Behavior
-
-### Hostname: "banana" (Personal Machine)
-- Git: Uses personal email (spikywebb@gmail.com)
-- No special environment variables
-
-### Hostname: "SCLT465" (Work Machine)
-- Git: Uses work email (callum.webb@stfc.ac.uk)
-- Zsh:
-  - `REPOS_ROOT_DIR=/home/callum/isis`
-  - `dci` alias for docker-compose with ISIS orchestration
-
-When editing templates, always check if hostname-specific logic exists before modifying.
-
-## Notes
-
-- This repository does NOT manage the home directory directly - it's a chezmoi source directory
-- Changes require `chezmoi apply` to take effect in the actual home directory
-- Template syntax errors will cause apply failures - test with `chezmoi execute-template`
-- The `.git` directory is managed normally - chezmoi doesn't interfere with version control
-- Neovim configuration has its own detailed CLAUDE.md at `dot_config/nvim/CLAUDE.md`
+2. Add to `packages.arch.official` for official repos
+3. Add to `packages.arch.aur` for AUR packages
+4. The `run_onchange_arch-install-packages.sh.tmpl` script will auto-install on next apply

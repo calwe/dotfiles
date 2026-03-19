@@ -1,0 +1,33 @@
+colors:
+  base:           "#15141b"
+  surface:        "#1a1820"
+  midpoint:       "#1e1c26"
+  overlay:        "#26243a"
+  muted:          "#6d6d6d"
+  subtle:         "#8a8a8a"
+  text:           "#edecee"
+  red:            "#ff6767"
+  yellow:         "#ffca85"
+  green:          "#61ffca"
+  teal:           "#82e2ff"
+  blue:           "#82e2ff"
+  purple:         "#a277ff"
+  accent:         "#a277ff"
+  highlight_low:  "#1a1820"
+  highlight_mid:  "#26243a"
+  highlight_high: "#3d3a55"
+
+neovim:
+  plugin:      "baliestri/aura-theme"
+  name:        "aura"
+  colorscheme: "aura-dark"
+  variant:     ""
+  flavour:     ""
+  background:  "dark"
+  style:       ""
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

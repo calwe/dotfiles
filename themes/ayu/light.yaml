@@ -1,0 +1,33 @@
+colors:
+  base:           "#f8f9fa"
+  surface:        "#f3f4f5"
+  midpoint:       "#f0f0f0"
+  overlay:        "#e7eef7"
+  muted:          "#8a9199"
+  subtle:         "#abadb1"
+  text:           "#5c6166"
+  red:            "#f07171"
+  yellow:         "#ffaa33"
+  green:          "#86b300"
+  teal:           "#4cbf99"
+  blue:           "#399ee6"
+  purple:         "#a37acc"
+  accent:         "#ffaa33"
+  highlight_low:  "#f3f4f5"
+  highlight_mid:  "#e7eef7"
+  highlight_high: "#d3e1f5"
+
+neovim:
+  plugin:      "Shatur/neovim-ayu"
+  name:        "ayu"
+  colorscheme: "ayu"
+  variant:     ""
+  flavour:     ""
+  background:  "light"
+  style:       "light"
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

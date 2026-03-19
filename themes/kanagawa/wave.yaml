@@ -1,0 +1,34 @@
+colors:
+  base:           "#16161d"
+  surface:        "#1f1f28"
+  midpoint:       "#2a2a37"
+  overlay:        "#363646"
+  muted:          "#727169"
+  subtle:         "#54546d"
+  text:           "#dcd7ba"
+  red:            "#c34043"
+  yellow:         "#dca561"
+  green:          "#98bb6c"
+  teal:           "#6a9589"
+  blue:           "#7e9cd8"
+  purple:         "#957fb8"
+  accent:         "#7e9cd8"
+  highlight_low:  "#1f1f28"
+  highlight_mid:  "#2d4f67"
+  highlight_high: "#363646"
+
+neovim:
+  plugin:      "rebelot/kanagawa.nvim"
+  name:        "kanagawa"
+  colorscheme: "kanagawa"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       "wave"
+
+tmux:
+  plugin: "Nybkox/tmux-kanagawa"
+  use_evergarden: false
+  style: ""
+  vars:
+    kanagawa_theme: "wave"

@@ -1,0 +1,33 @@
+colors:
+  base:           "#232136"
+  surface:        "#2a273f"
+  midpoint:       "#312e48"
+  overlay:        "#393552"
+  muted:          "#6e6a86"
+  subtle:         "#908caa"
+  text:           "#e0def4"
+  red:            "#eb6f92"
+  yellow:         "#f6c177"
+  green:          "#3e8fb0"
+  teal:           "#9ccfd8"
+  blue:           "#569fba"
+  purple:         "#c4a7e7"
+  accent:         "#ea9a97"
+  highlight_low:  "#2a283e"
+  highlight_mid:  "#44415a"
+  highlight_high: "#56526e"
+
+neovim:
+  plugin:      "rose-pine/neovim"
+  name:        "rose-pine"
+  colorscheme: "rose-pine"
+  variant:     "moon"
+  flavour:     ""
+  background:  ""
+
+tmux:
+  plugin:        "rose-pine/tmux"
+  use_evergarden: false
+  style:         ""
+  vars:
+    rose_pine_variant: "moon"

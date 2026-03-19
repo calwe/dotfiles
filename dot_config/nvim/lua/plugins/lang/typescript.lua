@@ -29,14 +29,31 @@ return {
     config = function(_, opts)
       require("typescript-tools").setup(opts)
 
-      -- Set 2 space indentation for TypeScript/JavaScript files
+      -- Set indentation for TypeScript/JavaScript files
+      -- Default: 2 spaces, ~/isis/ directory: 4 spaces
       vim.api.nvim_create_autocmd("FileType", {
         pattern = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
         callback = function()
-          vim.opt_local.tabstop = 2
-          vim.opt_local.shiftwidth = 2
-          vim.opt_local.softtabstop = 2
-          vim.opt_local.expandtab = true
+          local filepath = vim.fn.expand("%:p")
+          local home = vim.fn.expand("~")
+          local isis_path = home .. "/isis/"
+          local dssg_path = home .. "/dssg/"
+
+          if vim.startswith(filepath, isis_path) 
+            -- or vim.startswith(filepath, dssg_path)
+          then
+            -- Use 4 spaces for files in ~/isis/ and ~/dssg/
+            vim.opt_local.tabstop = 4
+            vim.opt_local.shiftwidth = 4
+            vim.opt_local.softtabstop = 4
+            vim.opt_local.expandtab = true
+          else
+            -- Use 2 spaces for all other TypeScript/JavaScript files
+            vim.opt_local.tabstop = 2
+            vim.opt_local.shiftwidth = 2
+            vim.opt_local.softtabstop = 2
+            vim.opt_local.expandtab = true
+          end
         end,
       })
     end,

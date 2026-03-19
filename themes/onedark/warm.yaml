@@ -1,0 +1,33 @@
+colors:
+  base:           "#2c2d30"
+  surface:        "#252527"
+  midpoint:       "#28292c"
+  overlay:        "#3e4045"
+  muted:          "#5d6068"
+  subtle:         "#7a7e86"
+  text:           "#b1b4b9"
+  red:            "#e16d77"
+  yellow:         "#dfbe81"
+  green:          "#99bc80"
+  teal:           "#5fafb9"
+  blue:           "#68aee8"
+  purple:         "#c27fd7"
+  accent:         "#68aee8"
+  highlight_low:  "#252527"
+  highlight_mid:  "#35373b"
+  highlight_high: "#3e4045"
+
+neovim:
+  plugin:      "navarasu/onedark.nvim"
+  name:        "onedark"
+  colorscheme: "onedark"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       "warm"
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

@@ -83,7 +83,6 @@ return {
       cmd = { "clangd", "--query-driver=**" }
     })
     vim.lsp.enable("clangd")
-
     vim.lsp.enable("basedpyright")
   end,
 }

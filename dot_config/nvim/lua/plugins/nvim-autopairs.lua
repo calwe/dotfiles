@@ -12,5 +12,10 @@ return {
                 typescript = { 'template_string' },
             },
         })
+
+        local endwise = require("nvim-autopairs.ts-rule").endwise
+        npairs.add_rules({
+            endwise("do$", "end", "elixir", nil)
+        })
     end,
 }

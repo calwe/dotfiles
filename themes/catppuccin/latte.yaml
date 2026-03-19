@@ -1,0 +1,33 @@
+colors:
+  base:           "#eff1f5"
+  surface:        "#e6e9ef"
+  midpoint:       "#d9dce6"
+  overlay:        "#ccd0da"
+  muted:          "#acb0be"
+  subtle:         "#7c7f93"
+  text:           "#4c4f69"
+  red:            "#d20f39"
+  yellow:         "#df8e1d"
+  green:          "#40a02b"
+  teal:           "#179299"
+  blue:           "#1e66f5"
+  purple:         "#8839ef"
+  accent:         "#ea76cb"
+  highlight_low:  "#e6e9ef"
+  highlight_mid:  "#bcc0cc"
+  highlight_high: "#acb0be"
+
+neovim:
+  plugin:      "catppuccin/nvim"
+  name:        "catppuccin"
+  colorscheme: "catppuccin"
+  variant:     ""
+  flavour:     "latte"
+  background:  ""
+
+tmux:
+  plugin:        "catppuccin/tmux"
+  use_evergarden: false
+  style:         ""
+  vars:
+    catppuccin_flavour: "latte"

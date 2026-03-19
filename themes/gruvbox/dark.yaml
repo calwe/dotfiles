@@ -1,0 +1,34 @@
+colors:
+  base:           "#282828"
+  surface:        "#1d2021"
+  midpoint:       "#252423"
+  overlay:        "#3c3836"
+  muted:          "#928374"
+  subtle:         "#7c6f64"
+  text:           "#ebdbb2"
+  red:            "#fb4934"
+  yellow:         "#fabd2f"
+  green:          "#b8bb26"
+  teal:           "#8ec07c"
+  blue:           "#83a598"
+  purple:         "#d3869b"
+  accent:         "#fabd2f"
+  highlight_low:  "#1d2021"
+  highlight_mid:  "#3c3836"
+  highlight_high: "#504945"
+
+neovim:
+  plugin:      "ellisonleao/gruvbox.nvim"
+  name:        "gruvbox"
+  colorscheme: "gruvbox"
+  variant:     ""
+  flavour:     ""
+  background:  "dark"
+  style:       ""
+
+tmux:
+  plugin: "egel/tmux-gruvbox"
+  use_evergarden: false
+  style: ""
+  vars:
+    tmux-gruvbox: "dark"

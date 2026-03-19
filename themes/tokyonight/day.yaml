@@ -1,0 +1,33 @@
+colors:
+  base:           "#e1e2e7"
+  surface:        "#d5d6db"
+  midpoint:       "#c7c8d3"
+  overlay:        "#c4c5cf"
+  muted:          "#848cb5"
+  subtle:         "#9196b8"
+  text:           "#3760bf"
+  red:            "#f52a65"
+  yellow:         "#8c6c3e"
+  green:          "#587539"
+  teal:           "#007197"
+  blue:           "#2e7de9"
+  purple:         "#9854f1"
+  accent:         "#2e7de9"
+  highlight_low:  "#d5d6db"
+  highlight_mid:  "#c4c5cf"
+  highlight_high: "#b0b7d3"
+
+neovim:
+  plugin:      "folke/tokyonight.nvim"
+  name:        "tokyonight"
+  colorscheme: "tokyonight"
+  variant:     ""
+  flavour:     ""
+  background:  "light"
+  style:       "day"
+
+tmux:
+  plugin: "janoamaral/tokyo-night-tmux"
+  use_evergarden: false
+  style: ""
+  vars: {}

@@ -1,0 +1,32 @@
+colors:
+  base:           "#272e33"
+  surface:        "#2e383c"
+  midpoint:       "#343e41"
+  overlay:        "#374145"
+  muted:          "#7a8478"
+  subtle:         "#859289"
+  text:           "#d3c6aa"
+  red:            "#e67e80"
+  yellow:         "#dbbc7f"
+  green:          "#a7c080"
+  teal:           "#83c092"
+  blue:           "#7fbbb3"
+  purple:         "#d699b6"
+  accent:         "#a7c080"
+  highlight_low:  "#2e383c"
+  highlight_mid:  "#414b50"
+  highlight_high: "#495156"
+
+neovim:
+  plugin:      "neanias/everforest-nvim"
+  name:        "everforest"
+  colorscheme: "everforest"
+  variant:     ""
+  flavour:     ""
+  background:  "hard"
+
+tmux:
+  plugin:        ""
+  use_evergarden: true
+  style:         "winter"
+  vars:          {}

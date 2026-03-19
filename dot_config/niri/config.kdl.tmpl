@@ -1,4 +1,4 @@
-spawn-at-startup "swaybg -m fill -i ~/.config/niri/wallpapers/minecraft_happy_ghast.png"
+spawn-at-startup "swaybg -m fill -i ~/.config/niri/wallpapers/current"
 spawn-at-startup "waybar"
 
 environment {
@@ -39,25 +39,25 @@ output "HDMI-A-1" {
 {{- end }}
 
 {{- if eq .chezmoi.hostname "SCLT465" }}
+output "DP-5" {
+    mode custom=true "1920x1080@75.025"
+    scale 1
+    transform "90"
+    position x=1710 y=0
+}
+
 output "DP-6" {
-    mode "2560x1440@143.999"
+    mode custom=true "1920x1080@75.025"
     scale 1
-    transform "normal"
-    position x=1920 y=0
+    transform "270"
+    position x=6230 y=0
 }
 
-output "DP-7" {
-    mode "1920x1080@60.000"
+output "DP-4" {
+    mode "3440x1440@99.982"
     scale 1
     transform "normal"
-    position x=3626 y=0
-}
-
-output "DP-10" {
-    mode "1920x1200@59.950"
-    scale 1
-    transform "normal"
-    position x=1706 y=0
+    position x=2790 y=0
 }
 
 output "eDP-1" {
@@ -84,8 +84,8 @@ layout {
     focus-ring {
         width 3
 
-        active-color "#31748f"
-        inactive-color "#6e6a86"
+        active-color "{{ .colors.accent }}"
+        inactive-color "{{ .colors.muted }}"
     }
 
 }
@@ -246,11 +246,14 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
     Print { screenshot; }
-    Mod+Shift+S { screenshot; }
+    Mod+Shift+S { spawn-sh "grim -g \"$(slurp)\" - | swappy -f -"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Shift+T { spawn "bash" "-c" "~/.config/scripts/theme-switch.sh"; }
+    Mod+Shift+W { spawn "bash" "-c" "pkill waybar; waybar &"; }
 
     Mod+Shift+Q { quit; }
     Ctrl+Alt+Delete { quit; }
