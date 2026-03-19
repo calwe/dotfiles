@@ -25,6 +25,8 @@ packages:
     - 'gopls'
     - 'zsh-autosuggestions'
     - 'zsh-syntax-highlighting'
+    - 'qt6ct'
+    - 'yaml-language-server'
     aur:
     - 'zen-browser-bin'
     - 'chromium-widevine'

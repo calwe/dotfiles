@@ -41,6 +41,9 @@ return {
     })
 
     -- Language server configurations
+
+    vim.lsp.enable("yamlls")
+
     -- Rust
     vim.lsp.config("rust_analyzer", {
       settings = {
@@ -75,5 +78,12 @@ return {
       },
     })
     vim.lsp.enable("tailwindcss")
+
+    vim.lsp.config("clangd", {
+      cmd = { "clangd", "--query-driver=**" }
+    })
+    vim.lsp.enable("clangd")
+
+    vim.lsp.enable("basedpyright")
   end,
 }
