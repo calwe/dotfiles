@@ -1,0 +1,33 @@
+colors:
+  base:           "#ffffff"
+  surface:        "#f2f4f8"
+  midpoint:       "#dde1e6"
+  overlay:        "#c1c7cd"
+  muted:          "#878d96"
+  subtle:         "#697077"
+  text:           "#161616"
+  red:            "#da1e28"
+  yellow:         "#f1c21b"
+  green:          "#198038"
+  teal:           "#007d79"
+  blue:           "#0043ce"
+  purple:         "#8a3ffc"
+  accent:         "#0043ce"
+  highlight_low:  "#e0e0e0"
+  highlight_mid:  "#c6c6c6"
+  highlight_high: "#a8a8a8"
+
+neovim:
+  plugin:      "nyoom-engineering/oxocarbon.nvim"
+  name:        "oxocarbon"
+  colorscheme: "oxocarbon"
+  variant:     ""
+  flavour:     ""
+  background:  "light"
+  style:       ""
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

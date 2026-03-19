@@ -1,0 +1,301 @@
+/* Custom Minimal colorschemes - managed by chezmoi theme-switcher */
+{{- $theme := .theme -}}
+{{- $subtheme := .subtheme -}}
+{{- $colors := .colors -}}
+
+{{- if eq $theme "aura" }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 255, 103, 103;
+  --color-orange-rgb: 255, 202, 133;
+  --color-yellow-rgb: 255, 202, 133;
+  --color-green-rgb: 97, 255, 202;
+  --color-cyan-rgb: 130, 226, 255;
+  --color-blue-rgb: 130, 226, 255;
+  --color-purple-rgb: 162, 119, 255;
+  --color-pink-rgb: 246, 148, 255;
+
+  --color-red: #ff6767;
+  --color-orange: #ffca85;
+  --color-yellow: #ffca85;
+  --color-green: #61ffca;
+  --color-cyan: #82e2ff;
+  --color-blue: #82e2ff;
+  --color-purple: #a277ff;
+  --color-pink: #f694ff;
+
+  --base-h: 253;
+  --base-s: 7;
+  --base-l: 8%;
+  --accent-h: 259;
+  --accent-s: 100%;
+  --accent-l: 73%;
+
+  --bg1: #15141b;
+  --bg2: #1a1820;
+  --bg3: rgba(26, 24, 32, 0.5);
+  --ui1: #2a2840;
+  --ui2: #3d3a55;
+  --ui3: #1a1820;
+  --tx1: #edecee;
+  --tx2: #bdbdbd;
+  --tx3: #6d6d6d;
+  --hl1: rgba(162, 119, 255, 0.15);
+  --hl2: rgba(162, 119, 255, 0.25);
+  --tx5: #a277ff;
+  --tx6: #8a8a8a;
+}
+
+{{- else if eq $theme "kanagawa" }}
+{{- if eq $subtheme "lotus" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 220, 70, 70;
+  --color-orange-rgb: 199, 125, 72;
+  --color-yellow-rgb: 174, 144, 66;
+  --color-green-rgb: 83, 158, 124;
+  --color-cyan-rgb: 62, 150, 150;
+  --color-blue-rgb: 62, 130, 195;
+  --color-purple-rgb: 166, 113, 175;
+  --color-pink-rgb: 166, 113, 175;
+
+  --color-red: #dc4646;
+  --color-orange: #c77d48;
+  --color-yellow: #ae9042;
+  --color-green: #539e7c;
+  --color-cyan: #3e9696;
+  --color-blue: #3e82c3;
+  --color-purple: #a671af;
+  --color-pink: #a671af;
+
+  --base-h: 40;
+  --base-s: 25;
+  --base-l: 94%;
+  --accent-h: 30;
+  --accent-s: 55%;
+  --accent-l: 50%;
+
+  --bg1: #fcf8ec;
+  --bg2: #f2ead6;
+  --bg3: rgba(242, 234, 214, 0.5);
+  --ui1: #e8e0cc;
+  --ui2: #d4cdc0;
+  --ui3: #f2ead6;
+  --tx1: #18161b;
+  --tx2: #3d3a55;
+  --tx3: #6b6680;
+  --hl1: rgba(199, 125, 72, 0.1);
+  --hl2: rgba(199, 125, 72, 0.2);
+  --tx5: #c77d48;
+  --tx6: #7a7a8a;
+}
+{{- else }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 220, 70, 70;
+  --color-orange-rgb: 239, 153, 81;
+  --color-yellow-rgb: 205, 174, 94;
+  --color-green-rgb: 155, 206, 166;
+  --color-cyan-rgb: 86, 182, 181;
+  --color-blue-rgb: 92, 157, 214;
+  --color-purple-rgb: 183, 148, 214;
+  --color-pink-rgb: 214, 148, 214;
+
+  --color-red: #dc4646;
+  --color-orange: #ef9981;
+  --color-yellow: #cdae5e;
+  --color-green: #9bcea6;
+  --color-cyan: #56b6b5;
+  --color-blue: #5c9dd6;
+  --color-purple: #b794d6;
+  --color-pink: #d694d6;
+
+  --base-h: 30;
+  --base-s: 20;
+  --base-l: 10%;
+  --accent-h: 30;
+  --accent-s: 65%;
+  --accent-l: 65%;
+
+  --bg1: #18161b;
+  --bg2: #1f1d28;
+  --bg3: rgba(31, 29, 40, 0.5);
+  --ui1: #3a3848;
+  --ui2: #4a4858;
+  --ui3: #1f1d28;
+  --tx1: #e6d4ac;
+  --tx2: #c5b98a;
+  --tx3: #6b6680;
+  --hl1: rgba(239, 153, 81, 0.15);
+  --hl2: rgba(239, 153, 81, 0.25);
+  --tx5: #d4a373;
+  --tx6: #a69f85;
+}
+{{- end }}
+
+{{- else if eq $theme "oxocarbon" }}
+{{- if eq $subtheme "light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 255, 126, 182;
+  --color-orange-rgb: 255, 173, 0;
+  --color-yellow-rgb: 241, 194, 27;
+  --color-green-rgb: 66, 190, 101;
+  --color-cyan-rgb: 8, 189, 186;
+  --color-blue-rgb: 32, 130, 220;
+  --color-purple-rgb: 150, 80, 220;
+  --color-pink-rgb: 255, 126, 182;
+
+  --color-red: #ff7eb6;
+  --color-orange: #ffad00;
+  --color-yellow: #f1c21b;
+  --color-green: #42be65;
+  --color-cyan: #08bdba;
+  --color-blue: #2082dc;
+  --color-purple: #9650dc;
+  --color-pink: #ff7eb6;
+
+  --base-h: 220;
+  --base-s: 20;
+  --base-l: 95%;
+  --accent-h: 225;
+  --accent-s: 80%;
+  --accent-l: 55%;
+
+  --bg1: #fafafa;
+  --bg2: #f0f0f0;
+  --bg3: rgba(240, 240, 240, 0.5);
+  --ui1: #e0e0e0;
+  --ui2: #d8d8d8;
+  --ui3: #f0f0f0;
+  --tx1: #161616;
+  --tx2: #393939;
+  --tx3: #6f6f6f;
+  --hl1: rgba(32, 130, 220, 0.1);
+  --hl2: rgba(32, 130, 220, 0.2);
+  --tx5: #2082dc;
+  --tx6: #8a8a8a;
+}
+{{- else }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 255, 126, 182;
+  --color-orange-rgb: 255, 173, 0;
+  --color-yellow-rgb: 241, 194, 27;
+  --color-green-rgb: 66, 190, 101;
+  --color-cyan-rgb: 8, 189, 186;
+  --color-blue-rgb: 120, 169, 255;
+  --color-purple-rgb: 190, 149, 255;
+  --color-pink-rgb: 255, 126, 182;
+
+  --color-red: #ff7eb6;
+  --color-orange: #ffad00;
+  --color-yellow: #f1c21b;
+  --color-green: #42be65;
+  --color-cyan: #08bdba;
+  --color-blue: #78a9ff;
+  --color-purple: #be95ff;
+  --color-pink: #ff7eb6;
+
+  --base-h: 0;
+  --base-s: 0;
+  --base-l: 8%;
+  --accent-h: 225;
+  --accent-s: 100%;
+  --accent-l: 70%;
+
+  --bg1: #161616;
+  --bg2: #0a0a0a;
+  --bg3: rgba(10, 10, 10, 0.5);
+  --ui1: #2a2a2a;
+  --ui2: #393939;
+  --ui3: #0a0a0a;
+  --tx1: #f2f4f8;
+  --tx2: #a8b2c1;
+  --tx3: #525252;
+  --hl1: rgba(120, 169, 255, 0.15);
+  --hl2: rgba(120, 169, 255, 0.25);
+  --tx5: #78a9ff;
+  --tx6: #6f6f6f;
+}
+{{- end }}
+
+{{- else if eq $theme "onedark" }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 220, 80, 80;
+  --color-orange-rgb: 220, 140, 70;
+  --color-yellow-rgb: 220, 190, 80;
+  --color-green-rgb: 160, 190, 100;
+  --color-cyan-rgb: 110, 180, 180;
+  --color-blue-rgb: 90, 150, 220;
+  --color-purple-rgb: 180, 140, 210;
+  --color-pink-rgb: 200, 140, 180;
+
+  --color-red: #dc5050;
+  --color-orange: #dc8c46;
+  --color-yellow: #dcbe50;
+  --color-green: #a0be64;
+  --color-cyan: #6eb4b4;
+  --color-blue: #5a96dc;
+  --color-purple: #b48cd2;
+  --color-pink: #c88cb4;
+
+  --base-h: 230;
+  --base-s: 20;
+  --base-l: 10%;
+  --accent-h: 210;
+  --accent-s: 70%;
+  --accent-l: 65%;
+
+  --bg1: #1e1e2e;
+  --bg2: #282838;
+  --bg3: rgba(40, 40, 56, 0.5);
+  --ui1: #3a3a4a;
+  --ui2: #4a4a5a;
+  --ui3: #282838;
+  --tx1: #abb2bf;
+  --tx2: #8b919e;
+  --tx3: #5c5c6a;
+  --hl1: rgba(90, 150, 220, 0.15);
+  --hl2: rgba(90, 150, 220, 0.25);
+  --tx5: #61afef;
+  --tx6: #7a7a8a;
+}
+
+{{- else if eq $theme "nightfox" }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 224, 100, 100;
+  --color-orange-rgb: 220, 140, 80;
+  --color-yellow-rgb: 200, 180, 90;
+  --color-green-rgb: 150, 200, 130;
+  --color-cyan-rgb: 110, 180, 180;
+  --color-blue-rgb: 100, 160, 220;
+  --color-purple-rgb: 180, 140, 210;
+  --color-pink-rgb: 210, 130, 180;
+
+  --color-red: #e06464;
+  --color-orange: #dc8c50;
+  --color-yellow: #c8b45a;
+  --color-green: #96c882;
+  --color-cyan: #6eb4b4;
+  --color-blue: #64a0dc;
+  --color-purple: #b48cd2;
+  --color-pink: #d282b4;
+
+  --base-h: 240;
+  --base-s: 15;
+  --base-l: 10%;
+  --accent-h: 210;
+  --accent-s: 60%;
+  --accent-l: 65%;
+
+  --bg1: #192330;
+  --bg2: #1e2a3a;
+  --bg3: rgba(30, 42, 58, 0.5);
+  --ui1: #2a3a4a;
+  --ui2: #3a4a5a;
+  --ui3: #1e2a3a;
+  --tx1: #cdcecf;
+  --tx2: #9ba1a6;
+  --tx3: #5a6a7a;
+  --hl1: rgba(100, 160, 220, 0.15);
+  --hl2: rgba(100, 160, 220, 0.25);
+  --tx5: #5fa8d3;
+  --tx6: #6a8090;
+}
+{{- end }}

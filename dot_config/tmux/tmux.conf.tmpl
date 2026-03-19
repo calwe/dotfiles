@@ -1,0 +1,41 @@
+{{ if .tmux.plugin -}}
+set -g @plugin '{{ .tmux.plugin }}'
+{{ range $k, $v := .tmux.vars -}}
+set -gq @{{ $k }} "{{ $v }}"
+{{ end -}}
+{{ else if .tmux.use_evergarden -}}
+set -gq @evergarden_style "{{ .tmux.style }}"
+run ~/.config/tmux/plugins/evergarden-tmux/evergarden.sh
+{{ end -}}
+
+# 'sensible' settings for tmux
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# restore tmux sessions after reboot
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
+
+# better copying for tmux, based on vim bindings
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# mouse support - makes scrolling nicer
+set -g mouse on
+
+# use index 1 for windows and panes, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# renumber windows when one is closed
+set -g renumber-windows on
+
+# vim-like pane navigation
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+run '~/.tmux/plugins/tpm-redux/tpm'

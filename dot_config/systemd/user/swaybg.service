@@ -4,6 +4,6 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg -m fill -i "%h/.config/niri/wallpapers/rosepine-space.jpg"
+ExecStart=/usr/bin/swaybg -m fill -i "%h/.config/niri/wallpapers/current"
 Restart=on-failure
 

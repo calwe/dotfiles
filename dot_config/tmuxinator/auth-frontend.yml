@@ -1,0 +1,15 @@
+name: auth-frontend
+root: ~/isis/authenticate-frontend/
+
+windows:
+  - editor: nvim
+  - lazygit: lazygit
+  - backend: 
+      root: ~/isis/docker-orchestration/
+      layout: vertical
+      panes: 
+        - "dci up users-v2 --build"
+        - "dci up est-service --build"
+  - frontend:
+      panes: 
+        - "npm run dev"

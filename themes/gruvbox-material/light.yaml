@@ -1,0 +1,33 @@
+colors:
+  base:           "#fbf1c7"
+  surface:        "#f4e8be"
+  midpoint:       "#f2e5bc"
+  overlay:        "#eee0b7"
+  muted:          "#ddccab"
+  subtle:         "#b5a58c"
+  text:           "#654735"
+  red:            "#c14a4a"
+  yellow:         "#b47109"
+  green:          "#6c782e"
+  teal:           "#4c7a5d"
+  blue:           "#45707a"
+  purple:         "#945e80"
+  accent:         "#6c782e"
+  highlight_low:  "#f4e8be"
+  highlight_mid:  "#eee0b7"
+  highlight_high: "#e5d5ad"
+
+neovim:
+  plugin:      "sainnhe/gruvbox-material"
+  name:        "gruvbox-material"
+  colorscheme: "gruvbox-material"
+  variant:     ""
+  flavour:     ""
+  background:  "light"
+  style:       ""
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

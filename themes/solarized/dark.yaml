@@ -1,0 +1,33 @@
+colors:
+  base:           "#002b36"
+  surface:        "#001e26"
+  midpoint:       "#003340"
+  overlay:        "#073642"
+  muted:          "#586e75"
+  subtle:         "#657b83"
+  text:           "#839496"
+  red:            "#dc322f"
+  yellow:         "#b58900"
+  green:          "#859900"
+  teal:           "#2aa198"
+  blue:           "#268bd2"
+  purple:         "#6c71c4"
+  accent:         "#268bd2"
+  highlight_low:  "#001e26"
+  highlight_mid:  "#073642"
+  highlight_high: "#586e75"
+
+neovim:
+  plugin:      "ishan9299/nvim-solarized-lua"
+  name:        "solarized"
+  colorscheme: "solarized"
+  variant:     ""
+  flavour:     ""
+  background:  "dark"
+  style:       ""
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

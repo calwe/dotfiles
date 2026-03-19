@@ -1,0 +1,33 @@
+colors:
+  base:           "#2e3440"
+  surface:        "#232831"
+  midpoint:       "#292f3c"
+  overlay:        "#3b4252"
+  muted:          "#4c566a"
+  subtle:         "#60728a"
+  text:           "#eceff4"
+  red:            "#bf616a"
+  yellow:         "#ebcb8b"
+  green:          "#a3be8c"
+  teal:           "#8fbcbb"
+  blue:           "#81a1c1"
+  purple:         "#b48ead"
+  accent:         "#88c0d0"
+  highlight_low:  "#3b4252"
+  highlight_mid:  "#434c5e"
+  highlight_high: "#4c566a"
+
+neovim:
+  plugin:      "shaunsingh/nord.nvim"
+  name:        "nord"
+  colorscheme: "nord"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       ""
+
+tmux:
+  plugin: "nordtheme/tmux"
+  use_evergarden: false
+  style: ""
+  vars: {}

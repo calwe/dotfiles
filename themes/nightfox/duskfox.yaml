@@ -1,0 +1,33 @@
+colors:
+  base:           "#232136"
+  surface:        "#191726"
+  midpoint:       "#1f1d30"
+  overlay:        "#2d2a45"
+  muted:          "#6e6a86"
+  subtle:         "#817c9c"
+  text:           "#e0def4"
+  red:            "#eb6f92"
+  yellow:         "#f6c177"
+  green:          "#a3be8c"
+  teal:           "#9ccfd8"
+  blue:           "#569fba"
+  purple:         "#c4a7e7"
+  accent:         "#c4a7e7"
+  highlight_low:  "#191726"
+  highlight_mid:  "#433c59"
+  highlight_high: "#63577d"
+
+neovim:
+  plugin:      "EdenEast/nightfox.nvim"
+  name:        "nightfox"
+  colorscheme: "duskfox"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       ""
+
+tmux:
+  plugin: ""
+  use_evergarden: false
+  style: ""
+  vars: {}

@@ -75,5 +75,7 @@ return {
       },
     })
     vim.lsp.enable("tailwindcss")
+
+    vim.lsp.enable("basedpyright")
   end,
 }
