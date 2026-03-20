@@ -1,16 +1,11 @@
-#custom-trigger:hover,
-#idle_inhibitor:hover,
-#clock.date:hover,
-#network:hover,
-#bluetooth:hover,
-#custom-system_update:hover,
-#mpris:hover,
-#pulseaudio:hover,
-#wireplumber:hover {
-	color: @hover-fg;
+/* hover states - flatten shadows */
+
+#custom-power_menu:hover {
+	box-shadow: 2px 2px 0 0 alpha(@main-br, 0.6);
 }
 
-/* inactive state */
+/* inactive/muted states */
+
 #idle_inhibitor.deactivated,
 #mpris.paused,
 #pulseaudio.output.muted,
@@ -19,19 +14,47 @@
 	color: @hover-fg;
 }
 
+/* hover feedback */
+
+#idle_inhibitor:hover,
+clock#date:hover,
+clock#time:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-system_update:hover,
+#mpris:hover,
+#pulseaudio:hover,
+#wireplumber:hover,
+#temperature:hover,
+#memory:hover,
+#cpu:hover,
+#battery:hover,
+#backlight:hover {
+	border-color: @accent;
+}
+
+/* warning state */
+
 #memory.warning,
 #cpu.warning,
 #battery.warning {
+	border-color: @warning;
 	color: @warning;
 }
+
+/* critical state */
 
 #temperature.critical,
 #memory.critical,
 #cpu.critical,
 #battery.critical {
+	border-color: @critical;
 	color: @critical;
 }
 
+/* charging state */
+
 #battery.charging {
+	border-color: @charging;
 	color: @charging;
 }

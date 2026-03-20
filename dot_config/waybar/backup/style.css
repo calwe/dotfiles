@@ -3,7 +3,7 @@
 	all: initial;
 }
 
-@import "themes/aubade.css";
+@import "theme.css";
 @import "styles/fonts.css";
 @import "styles/global.css";
 @import "styles/modules-center.css";

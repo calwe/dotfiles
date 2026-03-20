@@ -1,38 +1,37 @@
 {
   "colors": {
-    "base": "#161616",
-    "surface": "#0a0a0a",
-    "midpoint": "#141414",
-    "overlay": "#262626",
-    "muted": "#525252",
-    "subtle": "#6f6f6f",
-    "text": "#f2f4f8",
-    "red": "#ff7eb6",
-    "yellow": "#f1c21b",
-    "green": "#42be65",
-    "teal": "#08bdba",
-    "blue": "#78a9ff",
-    "purple": "#be95ff",
-    "accent": "#78a9ff",
-    "highlight_low": "#1c1c1c",
-    "highlight_mid": "#393939",
-    "highlight_high": "#525252"
+    "base": "#272e33",
+    "surface": "#2e383c",
+    "midpoint": "#343e41",
+    "overlay": "#374145",
+    "muted": "#7a8478",
+    "subtle": "#859289",
+    "text": "#d3c6aa",
+    "red": "#e67e80",
+    "yellow": "#dbbc7f",
+    "green": "#a7c080",
+    "teal": "#83c092",
+    "blue": "#7fbbb3",
+    "purple": "#d699b6",
+    "accent": "#a7c080",
+    "highlight_low": "#2e383c",
+    "highlight_mid": "#414b50",
+    "highlight_high": "#495156"
   },
   "neovim": {
-    "plugin": "nyoom-engineering/oxocarbon.nvim",
-    "name": "oxocarbon",
-    "colorscheme": "oxocarbon",
+    "plugin": "neanias/everforest-nvim",
+    "name": "everforest",
+    "colorscheme": "everforest",
     "variant": "",
     "flavour": "",
-    "background": "dark",
-    "style": ""
+    "background": "hard"
   },
   "tmux": {
     "plugin": "",
-    "use_evergarden": false,
-    "style": "",
+    "use_evergarden": true,
+    "style": "winter",
     "vars": {}
   },
-  "theme": "oxocarbon",
+  "theme": "everforest",
   "subtheme": "dark"
 }

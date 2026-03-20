@@ -1,38 +1,33 @@
 * {
 	color: @main-fg;
+	border-radius: 0;
 }
 
 #waybar {
 	background-color: @outline;
 }
 #waybar > box {
-	margin: 4px;
+	margin: 3px;
 	background-color: @main-bg;
+	padding: 2px 0;
 }
 
 button {
-	border-radius: 16px;
-	min-width: 16px;
-	padding: 0 10px;
+	border-radius: 0;
+	min-width: 0;
+	padding: 0 8px;
 }
-button:hover {
-	background-color: @hover-bg;
-	color: @hover-fg;
+
+.module {
+	margin-bottom: 0;
 }
 
 tooltip {
 	border: 2px solid @main-br;
-	border-radius: 10px;
+	border-radius: 0;
 	background-color: @main-bg;
+	box-shadow: 4px 4px 0 0 alpha(@main-br, 0.5);
 }
 tooltip > box {
-	padding: 0 6px;
-}
-
-.module,
-#custom-left_div,
-#custom-left_inv,
-#custom-right_div,
-#custom-right_inv {
-	margin-bottom: -1px;
+	padding: 2px 8px;
 }

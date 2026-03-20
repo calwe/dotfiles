@@ -37,3 +37,4 @@ packages:
     - 'tmuxinator'
     - 'elixir-ls'
     - 'basedpyright'
+    - 'ttf-space-mono'

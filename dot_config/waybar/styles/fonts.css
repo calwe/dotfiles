@@ -1,7 +1,7 @@
 * {
-	font-family: "0xProto Nerd Font";
+	font-family: "Space Mono", "0xProto Nerd Font", monospace;
 	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 }
 
 #custom-user,
@@ -13,16 +13,19 @@ tooltip label {
 
 #workspaces button.active label,
 #custom-distro {
-	font-size: 22px;
+	font-size: 18px;
 }
 
 #custom-power_menu {
-	font-size: 19px;
+	font-size: 16px;
 }
 
-#custom-left_div,
-#custom-left_inv,
-#custom-right_div,
-#custom-right_inv {
-	font-size: 22px;
+clock#time label {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+clock#date label {
+	font-size: 12px;
+	font-weight: normal;
 }
