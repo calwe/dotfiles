@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#c6c6c6"   # highlight_mid — clean light grey, light oxocarbon
+  text:  "#000000"
+  black: "#000000"

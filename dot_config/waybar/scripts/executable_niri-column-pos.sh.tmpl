@@ -1,0 +1,64 @@
+#!/bin/bash
+emit_state() {
+    local output workspace_id active_window_id window_data current_col all_windows total_cols text
+
+    if [ -n "$WAYBAR_OUTPUT" ]; then
+        workspace_id=$(niri msg --json workspaces 2>/dev/null | jq -r --arg output "$WAYBAR_OUTPUT" '.[] | select(.output == $output and .is_active) | .id')
+    else
+        workspace_id=$(niri msg --json focused-window 2>/dev/null | jq '.workspace_id')
+    fi
+
+    if [ -z "$workspace_id" ] || [ "$workspace_id" = "null" ]; then
+        echo '{"text": "", "tooltip": ""}'
+        return
+    fi
+
+    if [ -n "$WAYBAR_OUTPUT" ]; then
+        active_window_id=$(niri msg --json workspaces 2>/dev/null | jq -r --arg output "$WAYBAR_OUTPUT" '.[] | select(.output == $output and .is_active) | .active_window_id')
+    else
+        active_window_id=$(niri msg --json focused-window 2>/dev/null | jq '.id')
+    fi
+
+    if [ -z "$active_window_id" ] || [ "$active_window_id" = "null" ]; then
+        echo '{"text": "", "tooltip": ""}'
+        return
+    fi
+
+    window_data=$(niri msg --json windows 2>/dev/null | jq --argjson wid "$active_window_id" '.[] | select(.id == $wid)')
+
+    if [ -z "$window_data" ] || [ "$(echo "$window_data" | jq '.layout.pos_in_scrolling_layout')" = "null" ]; then
+        echo '{"text": "", "tooltip": ""}'
+        return
+    fi
+
+    current_col=$(echo "$window_data" | jq '.layout.pos_in_scrolling_layout[0]')
+
+    all_windows=$(niri msg --json windows 2>/dev/null | jq --argjson wid "$workspace_id" \
+        '[ .[] | select(.workspace_id == $wid and .layout.pos_in_scrolling_layout != null) ]')
+
+    total_cols=$(echo "$all_windows" | jq '[ .[].layout.pos_in_scrolling_layout[0] ] | unique | length')
+
+    text=""
+    for ((i = 1; i <= total_cols; i++)); do
+        if [ $i -gt 1 ]; then
+            text+=" "
+        fi
+        if [ "$i" -eq "$current_col" ]; then
+            text+="◼"
+        else
+            text+="◻"
+        fi
+    done
+
+    jq -cn --arg text "$text" --arg tooltip "Column $current_col of $total_cols" '{"text": $text, "tooltip": $tooltip}'
+}
+
+emit_state
+
+niri msg --json event-stream | jq --unbuffered -r 'keys[]' | while IFS= read -r event_type; do
+    case "$event_type" in
+        WindowFocusChanged|WindowsChanged|WorkspaceActivated|WindowLayoutsChanged|WorkspaceActiveWindowChanged)
+            emit_state
+            ;;
+    esac
+done

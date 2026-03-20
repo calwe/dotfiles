@@ -28,9 +28,17 @@ else
     selected_subtheme=""
 fi
 
-# Merge theme + subtheme name into yaml and write to chezmoidata
-yq ". + {\"theme\": \"$selected_theme\", \"subtheme\": \"$selected_subtheme\"}" \
+# Save existing per-app overrides before overwriting
+yq '.' "$THEME_DATA" | jq '{kitty_colors, kitty_neovim, kitty_waybar, waybar_colors, waybar_neovim, waybar_waybar, neovim_colors, neovim_neovim, neovim_waybar}' > /tmp/per-app.json 2>/dev/null
+
+# Write new theme data
+yq '. + {theme: "'"$selected_theme"'", subtheme: "'"$selected_subtheme"'"}' \
     "$yaml_file" > "$THEME_DATA"
+
+# Restore per-app overrides
+yq '.' "$THEME_DATA" | jq --argjson perapp "$(cat /tmp/per-app.json)" '. * $perapp' \
+    > "$THEME_DATA.new" && mv "$THEME_DATA.new" "$THEME_DATA"
+rm -f /tmp/per-app.json
 
 # Regenerate all templates (includes custom-minimal.css via chezmoi)
 chezmoi apply

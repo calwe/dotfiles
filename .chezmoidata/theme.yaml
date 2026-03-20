@@ -1,37 +1,66 @@
-{
-  "colors": {
-    "base": "#272e33",
-    "surface": "#2e383c",
-    "midpoint": "#343e41",
-    "overlay": "#374145",
-    "muted": "#7a8478",
-    "subtle": "#859289",
-    "text": "#d3c6aa",
-    "red": "#e67e80",
-    "yellow": "#dbbc7f",
-    "green": "#a7c080",
-    "teal": "#83c092",
-    "blue": "#7fbbb3",
-    "purple": "#d699b6",
-    "accent": "#a7c080",
-    "highlight_low": "#2e383c",
-    "highlight_mid": "#414b50",
-    "highlight_high": "#495156"
-  },
-  "neovim": {
-    "plugin": "neanias/everforest-nvim",
-    "name": "everforest",
-    "colorscheme": "everforest",
-    "variant": "",
-    "flavour": "",
-    "background": "hard"
-  },
-  "tmux": {
-    "plugin": "",
-    "use_evergarden": true,
-    "style": "winter",
-    "vars": {}
-  },
-  "theme": "everforest",
-  "subtheme": "dark"
-}
+colors:
+  base: '#272e33'
+  surface: '#2e383c'
+  midpoint: '#343e41'
+  overlay: '#374145'
+  muted: '#7a8478'
+  subtle: '#859289'
+  text: '#d3c6aa'
+  red: '#e67e80'
+  yellow: '#dbbc7f'
+  green: '#a7c080'
+  teal: '#83c092'
+  blue: '#7fbbb3'
+  purple: '#d699b6'
+  accent: '#a7c080'
+  highlight_low: '#2e383c'
+  highlight_mid: '#414b50'
+  highlight_high: '#495156'
+neovim:
+  plugin: neanias/everforest-nvim
+  name: everforest
+  colorscheme: everforest
+  variant: ''
+  flavour: ''
+  background: hard
+tmux:
+  plugin: ''
+  use_evergarden: true
+  style: winter
+  vars: {}
+theme: everforest
+subtheme: dark
+waybar:
+  bg: '#859289'
+  text: '#000000'
+  black: '#000000'
+waybar_colors:
+  base: '#2e3440'
+  surface: '#232831'
+  midpoint: '#292f3c'
+  overlay: '#3b4252'
+  muted: '#4c566a'
+  subtle: '#60728a'
+  text: '#eceff4'
+  red: '#bf616a'
+  yellow: '#ebcb8b'
+  green: '#a3be8c'
+  teal: '#8fbcbb'
+  blue: '#81a1c1'
+  purple: '#b48ead'
+  accent: '#88c0d0'
+  highlight_low: '#3b4252'
+  highlight_mid: '#434c5e'
+  highlight_high: '#4c566a'
+waybar_neovim:
+  plugin: shaunsingh/nord.nvim
+  name: nord
+  colorscheme: nord
+  variant: ''
+  flavour: ''
+  background: ''
+  style: ''
+waybar_waybar:
+  bg: '#7b97b8'
+  text: '#000000'
+  black: '#000000'

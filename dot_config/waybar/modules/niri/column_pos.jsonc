@@ -1,0 +1,9 @@
+{
+	"custom/niri-column-pos": {
+		"exec": "~/.config/waybar/scripts/niri-column-pos.sh",
+		"return-type": "json",
+		"format": "{}",
+		"escape": false,
+		"restart-interval": 5
+	}
+}

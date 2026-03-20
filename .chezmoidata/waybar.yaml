@@ -1,0 +1,35 @@
+waybar:
+  # === Typography ===
+  font_family:         "Space Mono, monospace"
+  font_size:           "14px"
+  font_weight_normal:  700
+  font_weight_bold:    700
+
+  # === Internal padding (inside a module box) ===
+  module_padding:  "7px"   # left/right padding inside each brutalist box
+  grouped_padding: "7px"    # left/right padding inside grouped items (tighter)
+
+  # === External margin (gap between boxes, integers in px for arithmetic) ===
+  # Standalone modules/groups — space between separate items on the bar
+  margin_v: 4   # top/bottom margin for standalone modules
+  margin_h: 10   # left/right margin for standalone modules
+  # Grouped items — space between items within a group
+  margin_grouped_v: 4   # top/bottom margin for items inside a group
+  margin_grouped_h: 3   # left/right margin for items inside a group (0 = flush)
+
+  # === Bar outer margins (4 sides, integers in px) ===
+  bar_margin_top:    4
+  bar_margin_right:  4
+  bar_margin_bottom: 4
+  bar_margin_left:   4
+
+  # === Border ===
+  border_width: "2px"
+
+  # === Brutalist shadow ===
+  shadow_size:       "3px"   # normal state:  3px 3px 0 0 @black
+  shadow_hover_size: "5px"   # hover state:   5px 5px 0 0 @black
+                             # pressed state: none
+
+  # === Hover / press shift (integers in px, used in arithmetic) ===
+  shift_amount: 2   # how many px to shift on hover/press

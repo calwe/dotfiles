@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     kanagawa_theme: "dragon"
+
+waybar:
+  bg:    "#737c73"   # muted — cool khaki grey, mid-tone
+  text:  "#000000"
+  black: "#000000"

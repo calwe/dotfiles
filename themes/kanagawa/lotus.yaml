@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     kanagawa_theme: "lotus"
+
+waybar:
+  bg:    "#b5cbd2"   # highlight_high — cool pale blue, light lotus
+  text:  "#000000"
+  black: "#000000"

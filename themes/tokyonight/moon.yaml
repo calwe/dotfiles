@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#636da6"   # muted — indigo blue, mid-tone
+  text:  "#000000"
+  black: "#000000"

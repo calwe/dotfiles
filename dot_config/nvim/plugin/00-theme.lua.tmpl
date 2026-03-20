@@ -1,41 +1,43 @@
+{{- $n := .neovim }}
+{{- if hasKey . "neovim_neovim" }}{{ $n = .neovim_neovim }}{{ end }}
 vim.pack.add({
   {
-    src = "https://github.com/{{ .neovim.plugin }}",
-    name = "{{ .neovim.name }}",
+    src = "https://github.com/{{ $n.plugin }}",
+    name = "{{ $n.name }}",
   },
 })
 
-{{ if eq .neovim.name "rose-pine" -}}
-require("rose-pine").setup({ variant = "{{ .neovim.variant }}" })
-{{ else if eq .neovim.name "catppuccin" -}}
-require("catppuccin").setup({ flavour = "{{ .neovim.flavour }}" })
-{{ else if eq .neovim.name "everforest" -}}
-require("everforest").setup({ background = "{{ .neovim.background }}" })
-{{ else if eq .neovim.name "tokyonight" -}}
-require("tokyonight").setup({ style = "{{ .neovim.style }}" })
-{{ else if eq .neovim.name "kanagawa" -}}
-require("kanagawa").setup({ theme = "{{ .neovim.style }}" })
-{{ else if eq .neovim.name "nord" -}}
+{{ if eq $n.name "rose-pine" -}}
+require("rose-pine").setup({ variant = "{{ $n.variant }}" })
+{{ else if eq $n.name "catppuccin" -}}
+require("catppuccin").setup({ flavour = "{{ $n.flavour }}" })
+{{ else if eq $n.name "everforest" -}}
+require("everforest").setup({ background = "{{ $n.background }}" })
+{{ else if eq $n.name "tokyonight" -}}
+require("tokyonight").setup({ style = "{{ $n.style }}" })
+{{ else if eq $n.name "kanagawa" -}}
+require("kanagawa").setup({ theme = "{{ $n.style }}" })
+{{ else if eq $n.name "nord" -}}
 -- no setup needed
-{{ else if eq .neovim.name "dracula" -}}
+{{ else if eq $n.name "dracula" -}}
 -- no setup needed
-{{ else if eq .neovim.name "gruvbox" -}}
-vim.o.background = "{{ .neovim.background }}"
-{{ else if eq .neovim.name "gruvbox-material" -}}
+{{ else if eq $n.name "gruvbox" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "gruvbox-material" -}}
 vim.g.gruvbox_material_background = "medium"
-vim.o.background = "{{ .neovim.background }}"
-{{ else if eq .neovim.name "nightfox" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "nightfox" -}}
 -- colorscheme name set below
-{{ else if eq .neovim.name "onedark" -}}
-require("onedark").setup({ style = "{{ .neovim.style }}" })
+{{ else if eq $n.name "onedark" -}}
+require("onedark").setup({ style = "{{ $n.style }}" })
 require("onedark").load()
-{{ else if eq .neovim.name "solarized" -}}
-vim.o.background = "{{ .neovim.background }}"
-{{ else if eq .neovim.name "ayu" -}}
-require("ayu").setup({ mirage = {{ if eq .neovim.style "mirage" }}true{{ else }}false{{ end }} })
-vim.o.background = "{{ .neovim.background }}"
+{{ else if eq $n.name "solarized" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "ayu" -}}
+require("ayu").setup({ mirage = {{ if eq $n.style "mirage" }}true{{ else }}false{{ end }} })
+vim.o.background = "{{ $n.background }}"
 require("ayu").colorscheme()
-{{ else if eq .neovim.name "oxocarbon" -}}
-vim.o.background = "{{ .neovim.background }}"
+{{ else if eq $n.name "oxocarbon" -}}
+vim.o.background = "{{ $n.background }}"
 {{ end -}}
-vim.cmd("colorscheme {{ .neovim.name }}")
+vim.cmd("colorscheme {{ $n.name }}")

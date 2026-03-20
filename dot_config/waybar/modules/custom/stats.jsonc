@@ -1,0 +1,43 @@
+{
+	"group/stats": {
+		"orientation": "horizontal",
+		"modules": [
+			"custom/cpu-stat",
+			"custom/memory-stat",
+			"custom/temp-stat"
+		]
+	},
+
+	/*---------
+	    cpu
+	---------*/
+
+	"custom/cpu-stat": {
+		"exec": "~/.config/waybar/scripts/cpu-stat.sh",
+		"return-type": "json",
+		"interval": 5,
+		"tooltip": false
+	},
+
+	/*------------
+	    memory
+	------------*/
+
+	"custom/memory-stat": {
+		"exec": "~/.config/waybar/scripts/memory-stat.sh",
+		"return-type": "json",
+		"interval": 5,
+		"tooltip": false
+	},
+
+	/*-----------------
+	    temperature
+	-----------------*/
+
+	"custom/temp-stat": {
+		"exec": "~/.config/waybar/scripts/temp-stat.sh",
+		"return-type": "json",
+		"interval": 2,
+		"tooltip": false
+	}
+}

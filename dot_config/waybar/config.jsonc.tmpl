@@ -1,0 +1,51 @@
+{
+	"include": [
+		// modules-left
+		"~/.config/waybar/modules/custom/hostname.jsonc",
+		"~/.config/waybar/modules/niri/workspaces.jsonc",
+		"~/.config/waybar/modules/niri/column_pos.jsonc",
+		"~/.config/waybar/modules/niri/window.jsonc",
+
+		// modules-center
+		"~/.config/waybar/modules/clock.jsonc",
+
+		// modules-right
+		"~/.config/waybar/modules/mpris.jsonc",
+		"~/.config/waybar/modules/custom/stats.jsonc",
+		"~/.config/waybar/modules/pulseaudio.jsonc"{{ if eq .chezmoi.hostname "SCLT465" }},
+		"~/.config/waybar/modules/backlight.jsonc",
+		"~/.config/waybar/modules/battery.jsonc"{{ end }},
+		"~/.config/waybar/modules/custom/power_menu.jsonc"
+	],
+
+	/*------------
+	    layout
+	------------*/
+
+	"modules-left": [
+		"custom/hostname",
+		"niri/workspaces",
+		"custom/niri-column-pos",
+		"niri/window"
+	],
+	"modules-center": [
+		"group/clock"
+	],
+	"modules-right": [
+		"mpris",
+		"group/stats",
+		"group/volume",
+		"custom/power_menu"
+	],
+
+	/*-------------
+	    options
+	-------------*/
+
+	"layer": "top",
+	"height": 0,
+	"width": 0,
+	"margin": 0,
+	"spacing": 0,
+	"reload_style_on_change": true
+}
