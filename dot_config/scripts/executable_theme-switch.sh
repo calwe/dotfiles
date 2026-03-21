@@ -107,9 +107,14 @@ update_obsidian_theme() {
                 dark_scheme="minimal-solarized-dark"
                 light_scheme="minimal-solarized-light"
             fi ;;
-        aura|kanagawa|oxocarbon|onedark|nightfox)
-            dark_scheme="custom-minimal"
-            light_scheme="custom-minimal" ;;
+        aura|kanagawa|oxocarbon|onedark|nightfox|aubade)
+            if [[ "$subtheme" == *-light ]]; then
+                dark_scheme="custom-minimal"
+                light_scheme="custom-minimal"
+            else
+                dark_scheme="custom-minimal"
+                light_scheme="custom-minimal"
+            fi ;;
         *) return 0 ;;
     esac
 
@@ -152,6 +157,7 @@ update_wallpaper() {
         onedark)   wallpaper="onedark.jpg" ;;
         nightfox)  wallpaper="nightfox.jpg" ;;
         aura)      wallpaper="aura.jpg" ;;
+        aubade)    return 0 ;;
         *) return 0 ;;
     esac
 

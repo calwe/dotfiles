@@ -1,0 +1,38 @@
+colors:
+  base:           "#0a0a0a"
+  surface:        "#111111"
+  midpoint:       "#1a1a1a"
+  overlay:        "#282828"
+  muted:          "#555555"
+  subtle:         "#777777"
+  text:           "#e8e8e8"
+  red:            "#808080"
+  yellow:         "#909090"
+  green:          "#808080"
+  teal:           "#858585"
+  blue:           "#7d7d7d"
+  purple:         "#7e7e7e"
+  accent:         "#808080"
+  highlight_low:  "#111111"
+  highlight_mid:  "#333333"
+  highlight_high: "#4a4a4a"
+
+neovim:
+  plugin:      "tinted-theming/tinted-nvim"
+  name:        "tinted-nvim"
+  colorscheme: "base16-aubade-monochrome"
+  variant:     ""
+  flavour:     ""
+  background:  ""
+  style:       ""
+
+tmux:
+  plugin:        ""
+  use_evergarden: false
+  style:         ""
+  vars:          {}
+
+waybar:
+  bg:    "#777777"
+  text:  "#000000"
+  black: "#000000"

@@ -3,7 +3,7 @@ font_size   14.0
 
 enable_audio_bell no
 
-{{- $has := hasKey . "kitty_colors" }}
+{{- $has := and (hasKey . "kitty_colors") .kitty_colors }}
 foreground            {{ if $has }}{{ .kitty_colors.text }}{{ else }}{{ .colors.text }}{{ end }}
 background            {{ if $has }}{{ .kitty_colors.base }}{{ else }}{{ .colors.base }}{{ end }}
 cursor                {{ if $has }}{{ .kitty_colors.green }}{{ else }}{{ .colors.green }}{{ end }}
@@ -12,11 +12,19 @@ selection_foreground  {{ if $has }}{{ .kitty_colors.text }}{{ else }}{{ .colors.
 selection_background  {{ if $has }}{{ .kitty_colors.highlight_mid }}{{ else }}{{ .colors.highlight_mid }}{{ end }}
 url_color             {{ if $has }}{{ .kitty_colors.teal }}{{ else }}{{ .colors.teal }}{{ end }}
 
-color0   {{ if $has }}{{ .kitty_colors.base }}{{ else }}{{ .colors.base }}{{ end }}     color8   {{ if $has }}{{ .kitty_colors.overlay }}{{ else }}{{ .colors.overlay }}{{ end }}
-color1   {{ if $has }}{{ .kitty_colors.red }}{{ else }}{{ .colors.red }}{{ end }}      color9   {{ if $has }}{{ .kitty_colors.red }}{{ else }}{{ .colors.red }}{{ end }}
-color2   {{ if $has }}{{ .kitty_colors.green }}{{ else }}{{ .colors.green }}{{ end }}    color10  {{ if $has }}{{ .kitty_colors.green }}{{ else }}{{ .colors.green }}{{ end }}
-color3   {{ if $has }}{{ .kitty_colors.yellow }}{{ else }}{{ .colors.yellow }}{{ end }}   color11  {{ if $has }}{{ .kitty_colors.yellow }}{{ else }}{{ .colors.yellow }}{{ end }}
-color4   {{ if $has }}{{ .kitty_colors.blue }}{{ else }}{{ .colors.blue }}{{ end }}     color12  {{ if $has }}{{ .kitty_colors.blue }}{{ else }}{{ .colors.blue }}{{ end }}
-color5   {{ if $has }}{{ .kitty_colors.purple }}{{ else }}{{ .colors.purple }}{{ end }}   color13  {{ if $has }}{{ .kitty_colors.purple }}{{ else }}{{ .colors.purple }}{{ end }}
-color6   {{ if $has }}{{ .kitty_colors.teal }}{{ else }}{{ .colors.teal }}{{ end }}     color14  {{ if $has }}{{ .kitty_colors.teal }}{{ else }}{{ .colors.teal }}{{ end }}
-color7   {{ if $has }}{{ .kitty_colors.subtle }}{{ else }}{{ .colors.subtle }}{{ end }}   color15  {{ if $has }}{{ .kitty_colors.text }}{{ else }}{{ .colors.text }}{{ end }}
+color0   {{ if $has }}{{ .kitty_colors.base }}{{ else }}{{ .colors.base }}{{ end }}
+color1   {{ if $has }}{{ .kitty_colors.red }}{{ else }}{{ .colors.red }}{{ end }}
+color2   {{ if $has }}{{ .kitty_colors.green }}{{ else }}{{ .colors.green }}{{ end }}
+color3   {{ if $has }}{{ .kitty_colors.yellow }}{{ else }}{{ .colors.yellow }}{{ end }}
+color4   {{ if $has }}{{ .kitty_colors.blue }}{{ else }}{{ .colors.blue }}{{ end }}
+color5   {{ if $has }}{{ .kitty_colors.purple }}{{ else }}{{ .colors.purple }}{{ end }}
+color6   {{ if $has }}{{ .kitty_colors.teal }}{{ else }}{{ .colors.teal }}{{ end }}
+color7   {{ if $has }}{{ .kitty_colors.subtle }}{{ else }}{{ .colors.subtle }}{{ end }}
+color8   {{ if $has }}{{ .kitty_colors.overlay }}{{ else }}{{ .colors.overlay }}{{ end }}
+color9   {{ if $has }}{{ .kitty_colors.red }}{{ else }}{{ .colors.red }}{{ end }}
+color10  {{ if $has }}{{ .kitty_colors.green }}{{ else }}{{ .colors.green }}{{ end }}
+color11  {{ if $has }}{{ .kitty_colors.yellow }}{{ else }}{{ .colors.yellow }}{{ end }}
+color12  {{ if $has }}{{ .kitty_colors.blue }}{{ else }}{{ .colors.blue }}{{ end }}
+color13  {{ if $has }}{{ .kitty_colors.purple }}{{ else }}{{ .colors.purple }}{{ end }}
+color14  {{ if $has }}{{ .kitty_colors.teal }}{{ else }}{{ .colors.teal }}{{ end }}
+color15  {{ if $has }}{{ .kitty_colors.text }}{{ else }}{{ .colors.text }}{{ end }}

@@ -1,5 +1,7 @@
 {{- $n := .neovim }}
-{{- if hasKey . "neovim_neovim" }}{{ $n = .neovim_neovim }}{{ end }}
+{{- if and (hasKey . "neovim_neovim") (.neovim_neovim) }}{{ $n = .neovim_neovim }}{{ end }}
+{{- $c := .colors }}
+{{- if and (hasKey . "neovim_colors") (.neovim_colors) }}{{ $c = .neovim_colors }}{{ end }}
 vim.pack.add({
   {
     src = "https://github.com/{{ $n.plugin }}",
@@ -39,5 +41,30 @@ vim.o.background = "{{ $n.background }}"
 require("ayu").colorscheme()
 {{ else if eq $n.name "oxocarbon" -}}
 vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "tinted-nvim" -}}
+require("tinted-nvim").setup({
+  default_scheme = "{{ $n.colorscheme }}",
+  schemes = {
+    ["{{ $n.colorscheme }}"] = {
+      variant = "dark",
+      base00 = "{{ $c.base }}",
+      base01 = "{{ $c.surface }}",
+      base02 = "{{ $c.overlay }}",
+      base03 = "{{ $c.muted }}",
+      base04 = "{{ $c.subtle }}",
+      base05 = "{{ $c.text }}",
+      base06 = "{{ $c.accent }}",
+      base07 = "{{ $c.highlight_high }}",
+      base08 = "{{ $c.red }}",
+      base09 = "{{ $c.yellow }}",
+      base0A = "{{ $c.yellow }}",
+      base0B = "{{ $c.green }}",
+      base0C = "{{ $c.teal }}",
+      base0D = "{{ $c.blue }}",
+      base0E = "{{ $c.purple }}",
+      base0F = "{{ $c.accent }}",
+    },
+  },
+})
 {{ end -}}
 vim.cmd("colorscheme {{ $n.name }}")
