@@ -31,3 +31,8 @@ tmux:
   style:         ""
   vars:
     rose_pine_variant: "main"
+
+waybar:
+  bg:    "#6e6a86"   # muted — dusty mauve, mid-tone against black text
+  text:  "#000000"
+  black: "#000000"

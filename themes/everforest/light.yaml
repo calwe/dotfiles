@@ -30,3 +30,8 @@ tmux:
   use_evergarden: true
   style:         "spring"
   vars:          {}
+
+waybar:
+  bg:    "#d9c998"   # highlight_mid — warm parchment, good contrast with black
+  text:  "#000000"
+  black: "#000000"

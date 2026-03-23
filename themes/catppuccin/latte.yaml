@@ -31,3 +31,8 @@ tmux:
   style:         ""
   vars:
     catppuccin_flavour: "latte"
+
+waybar:
+  bg:    "#bcc0cc"   # highlight_mid — cool grey, light theme
+  text:  "#000000"
+  black: "#000000"

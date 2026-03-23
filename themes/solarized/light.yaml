@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#ddd6c2"   # overlay — warm tan, light solarized
+  text:  "#000000"
+  black: "#000000"

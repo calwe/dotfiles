@@ -31,3 +31,8 @@ tmux:
   style:         ""
   vars:
     rose_pine_variant: "moon"
+
+waybar:
+  bg:    "#6e6a86"   # muted — dusty iris, mid-tone
+  text:  "#000000"
+  black: "#000000"

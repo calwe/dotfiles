@@ -1,6 +1,10 @@
 spawn-at-startup "swaybg -m fill -i ~/.config/niri/wallpapers/current"
 spawn-at-startup "waybar"
 
+environment {
+    QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
 input {
     keyboard {
         numlock
@@ -248,8 +252,10 @@ binds {
 
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
+    Mod+T { spawn "bash" "-c" "~/.config/scripts/app-theme-switch.sh"; }
     Mod+Shift+T { spawn "bash" "-c" "~/.config/scripts/theme-switch.sh"; }
     Mod+Shift+W { spawn "bash" "-c" "pkill waybar; waybar &"; }
+    Mod+Shift+B { spawn "bash" "-c" "~/.config/scripts/wallpaper-switch.sh"; }
 
     Mod+Shift+Q { quit; }
     Ctrl+Alt+Delete { quit; }

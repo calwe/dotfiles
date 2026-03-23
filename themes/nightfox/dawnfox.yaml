@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#b8cece"   # highlight_high — cool pale teal, light dawn theme
+  text:  "#000000"
+  black: "#000000"

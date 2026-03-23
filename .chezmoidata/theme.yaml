@@ -1,30 +1,30 @@
 {
   "colors": {
-    "base": "#161616",
-    "surface": "#0a0a0a",
-    "midpoint": "#141414",
-    "overlay": "#262626",
-    "muted": "#525252",
-    "subtle": "#6f6f6f",
-    "text": "#f2f4f8",
-    "red": "#ff7eb6",
-    "yellow": "#f1c21b",
-    "green": "#42be65",
-    "teal": "#08bdba",
-    "blue": "#78a9ff",
-    "purple": "#be95ff",
-    "accent": "#78a9ff",
-    "highlight_low": "#1c1c1c",
-    "highlight_mid": "#393939",
-    "highlight_high": "#525252"
+    "base": "#0d1117",
+    "surface": "#131921",
+    "midpoint": "#1c2230",
+    "overlay": "#272f3f",
+    "muted": "#5a6a7e",
+    "subtle": "#7a8a9e",
+    "text": "#c8d4e0",
+    "red": "#8a9aa8",
+    "yellow": "#96a5b2",
+    "green": "#8a9aa8",
+    "teal": "#8aa0b8",
+    "blue": "#8aa0b8",
+    "purple": "#8a92a8",
+    "accent": "#8a9aa8",
+    "highlight_low": "#131921",
+    "highlight_mid": "#2a3545",
+    "highlight_high": "#3a4a5e"
   },
   "neovim": {
-    "plugin": "nyoom-engineering/oxocarbon.nvim",
-    "name": "oxocarbon",
-    "colorscheme": "oxocarbon",
+    "plugin": "tinted-theming/tinted-nvim",
+    "name": "tinted-nvim",
+    "colorscheme": "base16-aubade-default",
     "variant": "",
     "flavour": "",
-    "background": "dark",
+    "background": "",
     "style": ""
   },
   "tmux": {
@@ -33,6 +33,50 @@
     "style": "",
     "vars": {}
   },
-  "theme": "oxocarbon",
-  "subtheme": "dark"
+  "waybar": {
+    "bg": "#7a8a9e",
+    "text": "#000000",
+    "black": "#000000"
+  },
+  "theme": "aubade",
+  "subtheme": "default",
+  "kitty_colors": null,
+  "kitty_neovim": null,
+  "kitty_waybar": null,
+  "waybar_colors": {
+    "base": "#9DB2BF",
+    "surface": "#bfc8cf",
+    "midpoint": "#cdd5db",
+    "overlay": "#d8dee3",
+    "muted": "#6a7a8a",
+    "subtle": "#4a5a6a",
+    "text": "#323232",
+    "red": "#6a7a8a",
+    "yellow": "#7a8898",
+    "green": "#6a7a8a",
+    "teal": "#7088a0",
+    "blue": "#7088a0",
+    "purple": "#6a7288",
+    "accent": "#6a7a8a",
+    "highlight_low": "#d0d8de",
+    "highlight_mid": "#c0cad2",
+    "highlight_high": "#FFE082"
+  },
+  "waybar_neovim": {
+    "plugin": "tinted-theming/tinted-nvim",
+    "name": "tinted-nvim",
+    "colorscheme": "base16-aubade-default-light",
+    "variant": "",
+    "flavour": "",
+    "background": "light",
+    "style": ""
+  },
+  "waybar_waybar": {
+    "bg": "#6a7a8a",
+    "text": "#000000",
+    "black": "#000000"
+  },
+  "neovim_colors": null,
+  "neovim_neovim": null,
+  "neovim_waybar": null
 }

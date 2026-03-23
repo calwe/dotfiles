@@ -298,4 +298,540 @@
   --tx5: #5fa8d3;
   --tx6: #6a8090;
 }
+
+{{- else if eq $theme "aubade" }}
+{{- if eq $subtheme "lavender-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 90, 24, 104;
+  --color-orange-rgb: 106, 40, 120;
+  --color-yellow-rgb: 106, 40, 120;
+  --color-green-rgb: 90, 24, 104;
+  --color-cyan-rgb: 94, 32, 112;
+  --color-blue-rgb: 86, 24, 98;
+  --color-purple-rgb: 90, 24, 104;
+  --color-pink-rgb: 106, 40, 120;
+
+  --color-red: #5a1868;
+  --color-orange: #6a2878;
+  --color-yellow: #6a2878;
+  --color-green: #5a1868;
+  --color-cyan: #5e2070;
+  --color-blue: #561862;
+  --color-purple: #5a1868;
+  --color-pink: #6a2878;
+
+  --base-h: 290;
+  --base-s: 25;
+  --base-l: 83%;
+  --accent-h: 290;
+  --accent-s: 65%;
+  --accent-l: 25%;
+
+  --bg1: #d0b0d8;
+  --bg2: #dcc5e2;
+  --bg3: rgba(220, 197, 226, 0.8);
+  --ui1: #ccb0d4;
+  --ui2: #7a2890;
+  --ui3: #601878;
+  --tx1: #2a1030;
+  --tx2: #5a1868;
+  --tx3: #8a48a0;
+  --hl1: rgba(156, 39, 176, 0.1);
+  --hl2: rgba(156, 39, 176, 0.2);
+  --tx5: #9c27b0;
+  --tx6: #b080c0;
+}
+{{- else if eq $subtheme "forest-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 42, 88, 48;
+  --color-orange-rgb: 58, 104, 56;
+  --color-yellow-rgb: 58, 104, 56;
+  --color-green-rgb: 42, 88, 48;
+  --color-cyan-rgb: 42, 96, 53;
+  --color-blue-rgb: 40, 85, 48;
+  --color-purple-rgb: 42, 88, 46;
+  --color-pink-rgb: 58, 104, 56;
+
+  --color-red: #2a5830;
+  --color-orange: #3a6838;
+  --color-yellow: #3a6838;
+  --color-green: #2a5830;
+  --color-cyan: #2a6035;
+  --color-blue: #285530;
+  --color-purple: #2a582e;
+  --color-pink: #3a6838;
+
+  --base-h: 130;
+  --base-s: 25;
+  --base-l: 80%;
+  --accent-h: 130;
+  --accent-s: 55%;
+  --accent-l: 20%;
+
+  --bg1: #a8d0ac;
+  --bg2: #c0dcc2;
+  --bg3: rgba(192, 220, 194, 0.8);
+  --ui1: #b0ceb0;
+  --ui2: #3a7040;
+  --ui3: #2a5a30;
+  --tx1: #1a301c;
+  --tx2: #2a5830;
+  --tx3: #4a9050;
+  --hl1: rgba(76, 175, 80, 0.1);
+  --hl2: rgba(76, 175, 80, 0.2);
+  --tx5: #4caf50;
+  --tx6: #70b070;
+}
+{{- else if eq $subtheme "ocean-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 26, 72, 120;
+  --color-orange-rgb: 42, 88, 136;
+  --color-yellow-rgb: 42, 88, 136;
+  --color-green-rgb: 26, 72, 120;
+  --color-cyan-rgb: 26, 80, 128;
+  --color-blue-rgb: 26, 80, 128;
+  --color-purple-rgb: 26, 70, 116;
+  --color-pink-rgb: 42, 88, 136;
+
+  --color-red: #1a4878;
+  --color-orange: #2a5888;
+  --color-yellow: #2a5888;
+  --color-green: #1a4878;
+  --color-cyan: #1a5080;
+  --color-blue: #1a5080;
+  --color-purple: #1a4674;
+  --color-pink: #2a5888;
+
+  --base-h: 210;
+  --base-s: 30;
+  --base-l: 80%;
+  --accent-h: 210;
+  --accent-s: 70%;
+  --accent-l: 30%;
+
+  --bg1: #a8c8e0;
+  --bg2: #c0d6ea;
+  --bg3: rgba(192, 214, 234, 0.8);
+  --ui1: #b0c6d8;
+  --ui2: #2868a8;
+  --ui3: #1a5088;
+  --tx1: #1a2840;
+  --tx2: #1a4878;
+  --tx3: #3a78b0;
+  --hl1: rgba(33, 150, 243, 0.1);
+  --hl2: rgba(33, 150, 243, 0.2);
+  --tx5: #2196f3;
+  --tx6: #6090c0;
+}
+{{- else if eq $subtheme "solarized-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 26, 64, 112;
+  --color-orange-rgb: 42, 80, 128;
+  --color-yellow-rgb: 42, 80, 128;
+  --color-green-rgb: 26, 64, 112;
+  --color-cyan-rgb: 26, 72, 120;
+  --color-blue-rgb: 26, 72, 120;
+  --color-purple-rgb: 26, 62, 108;
+  --color-pink-rgb: 42, 80, 128;
+
+  --color-red: #1a4070;
+  --color-orange: #2a5080;
+  --color-yellow: #2a5080;
+  --color-green: #1a4070;
+  --color-cyan: #1a4878;
+  --color-blue: #1a4878;
+  --color-purple: #1a3e6c;
+  --color-pink: #2a5080;
+
+  --base-h: 210;
+  --base-s: 30;
+  --base-l: 80%;
+  --accent-h: 210;
+  --accent-s: 70%;
+  --accent-l: 28%;
+
+  --bg1: #a8c4dc;
+  --bg2: #c0d4e8;
+  --bg3: rgba(192, 212, 232, 0.8);
+  --ui1: #b0c4d6;
+  --ui2: #2a6098;
+  --ui3: #1a4878;
+  --tx1: #1a2840;
+  --tx2: #1a4070;
+  --tx3: #3a70a8;
+  --hl1: rgba(38, 139, 210, 0.1);
+  --hl2: rgba(38, 139, 210, 0.2);
+  --tx5: #268bd2;
+  --tx6: #6090c0;
+}
+{{- else if eq $subtheme "amber-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 160, 104, 0;
+  --color-orange-rgb: 176, 120, 0;
+  --color-yellow-rgb: 176, 120, 0;
+  --color-green-rgb: 160, 104, 0;
+  --color-cyan-rgb: 168, 114, 0;
+  --color-blue-rgb: 156, 100, 0;
+  --color-purple-rgb: 158, 102, 0;
+  --color-pink-rgb: 176, 120, 0;
+
+  --color-red: #a06800;
+  --color-orange: #b07800;
+  --color-yellow: #b07800;
+  --color-green: #a06800;
+  --color-cyan: #a87200;
+  --color-blue: #9c6400;
+  --color-purple: #9e6600;
+  --color-pink: #b07800;
+
+  --base-h: 42;
+  --base-s: 40;
+  --base-l: 85%;
+  --accent-h: 40;
+  --accent-s: 80%;
+  --accent-l: 35%;
+
+  --bg1: #ecdca0;
+  --bg2: #f2e8c0;
+  --bg3: rgba(242, 232, 192, 0.8);
+  --ui1: #e8d8a0;
+  --ui2: #b08520;
+  --ui3: #906a10;
+  --tx1: #3a2a00;
+  --tx2: #a06800;
+  --tx3: #c89830;
+  --hl1: rgba(255, 176, 0, 0.1);
+  --hl2: rgba(255, 176, 0, 0.2);
+  --tx5: #ffb000;
+  --tx6: #c0a050;
+}
+{{- else if eq $subtheme "cool-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 42, 96, 98;
+  --color-orange-rgb: 58, 112, 114;
+  --color-yellow-rgb: 58, 112, 114;
+  --color-green-rgb: 42, 96, 98;
+  --color-cyan-rgb: 42, 101, 104;
+  --color-blue-rgb: 40, 98, 101;
+  --color-purple-rgb: 42, 94, 98;
+  --color-pink-rgb: 58, 112, 114;
+
+  --color-red: #2a6062;
+  --color-orange: #3a7072;
+  --color-yellow: #3a7072;
+  --color-green: #2a6062;
+  --color-cyan: #2a6568;
+  --color-blue: #286265;
+  --color-purple: #2a5e62;
+  --color-pink: #3a7072;
+
+  --base-h: 180;
+  --base-s: 25;
+  --base-l: 80%;
+  --accent-h: 182;
+  --accent-s: 50%;
+  --accent-l: 25%;
+
+  --bg1: #a8d0d0;
+  --bg2: #c0dcd8;
+  --bg3: rgba(192, 220, 216, 0.8);
+  --ui1: #b0cec8;
+  --ui2: #407878;
+  --ui3: #2a6060;
+  --tx1: #1a3030;
+  --tx2: #2a6062;
+  --tx3: #509898;
+  --hl1: rgba(95, 158, 160, 0.1);
+  --hl2: rgba(95, 158, 160, 0.2);
+  --tx5: #5f9ea0;
+  --tx6: #80b0b0;
+}
+{{- else if eq $subtheme "midnight-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 42, 52, 120;
+  --color-orange-rgb: 58, 68, 136;
+  --color-yellow-rgb: 58, 68, 136;
+  --color-green-rgb: 42, 52, 120;
+  --color-cyan-rgb: 46, 58, 128;
+  --color-blue-rgb: 46, 58, 128;
+  --color-purple-rgb: 42, 50, 116;
+  --color-pink-rgb: 58, 68, 136;
+
+  --color-red: #2a3478;
+  --color-orange: #3a4488;
+  --color-yellow: #3a4488;
+  --color-green: #2a3478;
+  --color-cyan: #2e3a80;
+  --color-blue: #2e3a80;
+  --color-purple: #2a3274;
+  --color-pink: #3a4488;
+
+  --base-h: 230;
+  --base-s: 30;
+  --base-l: 80%;
+  --accent-h: 232;
+  --accent-s: 60%;
+  --accent-l: 35%;
+
+  --bg1: #b0b8d8;
+  --bg2: #c0c8e2;
+  --bg3: rgba(192, 200, 226, 0.8);
+  --ui1: #b0b8d2;
+  --ui2: #3a48a0;
+  --ui3: #2a3888;
+  --tx1: #1a1e40;
+  --tx2: #2a3478;
+  --tx3: #5060b0;
+  --hl1: rgba(63, 81, 181, 0.1);
+  --hl2: rgba(63, 81, 181, 0.2);
+  --tx5: #3f51b5;
+  --tx6: #8090c0;
+}
+{{- else if eq $subtheme "monochrome-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 80, 80, 80;
+  --color-orange-rgb: 72, 72, 72;
+  --color-yellow-rgb: 72, 72, 72;
+  --color-green-rgb: 80, 80, 80;
+  --color-cyan-rgb: 76, 76, 76;
+  --color-blue-rgb: 82, 82, 82;
+  --color-purple-rgb: 80, 80, 80;
+  --color-pink-rgb: 72, 72, 72;
+
+  --color-red: #505050;
+  --color-orange: #484848;
+  --color-yellow: #484848;
+  --color-green: #505050;
+  --color-cyan: #4c4c4c;
+  --color-blue: #525252;
+  --color-purple: #505050;
+  --color-pink: #484848;
+
+  --base-h: 0;
+  --base-s: 0;
+  --base-l: 83%;
+  --accent-h: 0;
+  --accent-s: 0;
+  --accent-l: 25%;
+
+  --bg1: #d5d5d5;
+  --bg2: #e2e2e2;
+  --bg3: rgba(226, 226, 226, 0.8);
+  --ui1: #d0d0d0;
+  --ui2: #808080;
+  --ui3: #606060;
+  --tx1: #222222;
+  --tx2: #505050;
+  --tx3: #909090;
+  --hl1: rgba(0, 0, 0, 0.05);
+  --hl2: rgba(0, 0, 0, 0.1);
+  --tx5: #444444;
+  --tx6: #a0a0a0;
+}
+{{- else if eq $subtheme "reader-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 90, 90, 90;
+  --color-orange-rgb: 80, 80, 80;
+  --color-yellow-rgb: 80, 80, 80;
+  --color-green-rgb: 90, 90, 90;
+  --color-cyan-rgb: 85, 85, 85;
+  --color-blue-rgb: 94, 94, 94;
+  --color-purple-rgb: 90, 90, 90;
+  --color-pink-rgb: 80, 80, 80;
+
+  --color-red: #5a5a5a;
+  --color-orange: #505050;
+  --color-yellow: #505050;
+  --color-green: #5a5a5a;
+  --color-cyan: #555555;
+  --color-blue: #5e5e5e;
+  --color-purple: #5a5a5a;
+  --color-pink: #505050;
+
+  --base-h: 0;
+  --base-s: 0;
+  --base-l: 88%;
+  --accent-h: 0;
+  --accent-s: 0;
+  --accent-l: 28%;
+
+  --bg1: #e0e0e0;
+  --bg2: #ebebeb;
+  --bg3: rgba(235, 235, 235, 0.8);
+  --ui1: #dcdcdc;
+  --ui2: #909090;
+  --ui3: #707070;
+  --tx1: #2a2a2a;
+  --tx2: #5a5a5a;
+  --tx3: #909090;
+  --hl1: rgba(0, 0, 0, 0.05);
+  --hl2: rgba(0, 0, 0, 0.1);
+  --tx5: #4a4a4a;
+  --tx6: #a0a0a0;
+}
+{{- else if eq $subtheme "brutalist-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 85, 85, 85;
+  --color-orange-rgb: 74, 74, 74;
+  --color-yellow-rgb: 74, 74, 74;
+  --color-green-rgb: 85, 85, 85;
+  --color-cyan-rgb: 80, 80, 80;
+  --color-blue-rgb: 90, 90, 90;
+  --color-purple-rgb: 85, 85, 85;
+  --color-pink-rgb: 74, 74, 74;
+
+  --color-red: #555555;
+  --color-orange: #4a4a4a;
+  --color-yellow: #4a4a4a;
+  --color-green: #555555;
+  --color-cyan: #505050;
+  --color-blue: #5a5a5a;
+  --color-purple: #555555;
+  --color-pink: #4a4a4a;
+
+  --base-h: 0;
+  --base-s: 0;
+  --base-l: 85%;
+  --accent-h: 0;
+  --accent-s: 0;
+  --accent-l: 20%;
+
+  --bg1: #d8d8d8;
+  --bg2: #e5e5e5;
+  --bg3: rgba(229, 229, 229, 0.8);
+  --ui1: #d5d5d5;
+  --ui2: #888888;
+  --ui3: #666666;
+  --tx1: #1a1a1a;
+  --tx2: #555555;
+  --tx3: #999999;
+  --hl1: rgba(0, 0, 0, 0.05);
+  --hl2: rgba(0, 0, 0, 0.1);
+  --tx5: #333333;
+  --tx6: #aaaaaa;
+}
+{{- else if eq $subtheme "sunset-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 128, 48, 24;
+  --color-orange-rgb: 144, 58, 32;
+  --color-yellow-rgb: 144, 58, 32;
+  --color-green-rgb: 128, 48, 24;
+  --color-cyan-rgb: 136, 52, 28;
+  --color-blue-rgb: 124, 46, 22;
+  --color-purple-rgb: 128, 48, 20;
+  --color-pink-rgb: 144, 58, 32;
+
+  --color-red: #803018;
+  --color-orange: #903a20;
+  --color-yellow: #903a20;
+  --color-green: #803018;
+  --color-cyan: #88341c;
+  --color-blue: #7c2e16;
+  --color-purple: #803014;
+  --color-pink: #903a20;
+
+  --base-h: 15;
+  --base-s: 35;
+  --base-l: 83%;
+  --accent-h: 14;
+  --accent-s: 70%;
+  --accent-l: 30%;
+
+  --bg1: #e8c0b0;
+  --bg2: #f0d4c8;
+  --bg3: rgba(240, 212, 200, 0.8);
+  --ui1: #e8c4b4;
+  --ui2: #b04828;
+  --ui3: #903818;
+  --tx1: #3a1a10;
+  --tx2: #803018;
+  --tx3: #c06040;
+  --hl1: rgba(255, 87, 34, 0.1);
+  --hl2: rgba(255, 87, 34, 0.2);
+  --tx5: #ff5722;
+  --tx6: #c08070;
+}
+{{- else if eq $subtheme "warm-light" }}
+.theme-light.custom-minimal {
+  --color-red-rgb: 90, 60, 24;
+  --color-orange-rgb: 106, 72, 32;
+  --color-yellow-rgb: 106, 72, 32;
+  --color-green-rgb: 90, 60, 24;
+  --color-cyan-rgb: 96, 68, 32;
+  --color-blue-rgb: 88, 58, 22;
+  --color-purple-rgb: 92, 60, 24;
+  --color-pink-rgb: 106, 72, 32;
+
+  --color-red: #5a3c18;
+  --color-orange: #6a4820;
+  --color-yellow: #6a4820;
+  --color-green: #5a3c18;
+  --color-cyan: #604420;
+  --color-blue: #583a16;
+  --color-purple: #5c3c18;
+  --color-pink: #6a4820;
+
+  --base-h: 30;
+  --base-s: 30;
+  --base-l: 83%;
+  --accent-h: 28;
+  --accent-s: 60%;
+  --accent-l: 25%;
+
+  --bg1: #e0d0b8;
+  --bg2: #ecdcc8;
+  --bg3: rgba(236, 220, 200, 0.8);
+  --ui1: #e0ccb4;
+  --ui2: #8a6030;
+  --ui3: #6a4820;
+  --tx1: #3a2a1a;
+  --tx2: #5a3c18;
+  --tx3: #a07840;
+  --hl1: rgba(212, 165, 116, 0.1);
+  --hl2: rgba(212, 165, 116, 0.2);
+  --tx5: #d4a574;
+  --tx6: #b09870;
+}
+{{- else }}
+.theme-dark.custom-minimal {
+  --color-red-rgb: 138, 154, 168;
+  --color-orange-rgb: 150, 165, 178;
+  --color-yellow-rgb: 150, 165, 178;
+  --color-green-rgb: 138, 154, 168;
+  --color-cyan-rgb: 138, 160, 184;
+  --color-blue-rgb: 138, 160, 184;
+  --color-purple-rgb: 138, 146, 168;
+  --color-pink-rgb: 150, 165, 178;
+
+  --color-red: #8a9aa8;
+  --color-orange: #96a5b2;
+  --color-yellow: #96a5b2;
+  --color-green: #8a9aa8;
+  --color-cyan: #8aa0b8;
+  --color-blue: #8aa0b8;
+  --color-purple: #8a92a8;
+  --color-pink: #96a5b2;
+
+  --base-h: 220;
+  --base-s: 13;
+  --base-l: 10%;
+  --accent-h: 215;
+  --accent-s: 12%;
+  --accent-l: 60%;
+
+  --bg1: #0d1117;
+  --bg2: #131921;
+  --bg3: rgba(19, 25, 33, 0.5);
+  --ui1: #2a3545;
+  --ui2: #5a6a7e;
+  --ui3: #7a8a9e;
+  --tx1: #c8d4e0;
+  --tx2: #8a9aa8;
+  --tx3: #5a6a7e;
+  --hl1: rgba(138, 154, 168, 0.15);
+  --hl2: rgba(138, 154, 168, 0.25);
+  --tx5: #8a9aa8;
+  --tx6: #5a6a7e;
+}
+{{- end }}
 {{- end }}

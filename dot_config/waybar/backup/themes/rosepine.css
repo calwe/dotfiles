@@ -1,0 +1,54 @@
+@define-color base            #191724;
+@define-color surface         #1f1d2e;
+@define-color midpoint        #222034;
+@define-color overlay         #26233a;
+
+@define-color muted           #6e6a86;
+@define-color subtle          #908caa;
+@define-color text            #e0def4;
+
+@define-color love            #eb6f92;
+@define-color gold            #f6c177;
+@define-color rose            #ebbcba;
+@define-color pine            #31748f;
+@define-color foam            #9ccfd8;
+@define-color iris            #c4a7e7;
+
+@define-color highlightLow    #21202e;
+@define-color highlightMed    #403d52;
+@define-color highlightHigh   #524f67;
+
+/*
+	br - border
+	bg - background
+	fg - foreground
+*/
+
+/* main colors */
+
+@define-color accent        @rose;
+@define-color main-br       @subtle;
+@define-color main-bg       @base;
+@define-color main-fg       @text;
+@define-color hover-bg      @surface;
+@define-color hover-fg      alpha(@main-fg, 0.75);
+@define-color outline       shade(@main-bg, 0.5);
+
+/* module colors */
+
+@define-color workspaces    @surface;
+@define-color temperature   @surface;
+@define-color memory        @midpoint;
+@define-color cpu           @overlay;
+@define-color time          @overlay;
+@define-color date          @midpoint;
+@define-color tray          @base;
+@define-color volume        @base;
+@define-color backlight     @midpoint;
+@define-color battery       @overlay;
+
+/* state colors */
+
+@define-color warning       @gold;
+@define-color critical      @love;
+@define-color charging      @pine;

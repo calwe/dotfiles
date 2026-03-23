@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     tmux-gruvbox: "dark"
+
+waybar:
+  bg:    "#928374"   # muted — warm brown-grey, classic gruvbox mid-tone
+  text:  "#000000"
+  black: "#000000"

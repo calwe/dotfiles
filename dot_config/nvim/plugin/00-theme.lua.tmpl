@@ -1,0 +1,70 @@
+{{- $n := .neovim }}
+{{- if and (hasKey . "neovim_neovim") (.neovim_neovim) }}{{ $n = .neovim_neovim }}{{ end }}
+{{- $c := .colors }}
+{{- if and (hasKey . "neovim_colors") (.neovim_colors) }}{{ $c = .neovim_colors }}{{ end }}
+vim.pack.add({
+  {
+    src = "https://github.com/{{ $n.plugin }}",
+    name = "{{ $n.name }}",
+  },
+})
+
+{{ if eq $n.name "rose-pine" -}}
+require("rose-pine").setup({ variant = "{{ $n.variant }}" })
+{{ else if eq $n.name "catppuccin" -}}
+require("catppuccin").setup({ flavour = "{{ $n.flavour }}" })
+{{ else if eq $n.name "everforest" -}}
+require("everforest").setup({ background = "{{ $n.background }}" })
+{{ else if eq $n.name "tokyonight" -}}
+require("tokyonight").setup({ style = "{{ $n.style }}" })
+{{ else if eq $n.name "kanagawa" -}}
+require("kanagawa").setup({ theme = "{{ $n.style }}" })
+{{ else if eq $n.name "nord" -}}
+-- no setup needed
+{{ else if eq $n.name "dracula" -}}
+-- no setup needed
+{{ else if eq $n.name "gruvbox" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "gruvbox-material" -}}
+vim.g.gruvbox_material_background = "medium"
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "nightfox" -}}
+-- colorscheme name set below
+{{ else if eq $n.name "onedark" -}}
+require("onedark").setup({ style = "{{ $n.style }}" })
+require("onedark").load()
+{{ else if eq $n.name "solarized" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "ayu" -}}
+require("ayu").setup({ mirage = {{ if eq $n.style "mirage" }}true{{ else }}false{{ end }} })
+vim.o.background = "{{ $n.background }}"
+require("ayu").colorscheme()
+{{ else if eq $n.name "oxocarbon" -}}
+vim.o.background = "{{ $n.background }}"
+{{ else if eq $n.name "tinted-nvim" -}}
+require("tinted-nvim").setup({
+  default_scheme = "{{ $n.colorscheme }}",
+  schemes = {
+    ["{{ $n.colorscheme }}"] = {
+      variant = "dark",
+      base00 = "{{ $c.base }}",
+      base01 = "{{ $c.surface }}",
+      base02 = "{{ $c.overlay }}",
+      base03 = "{{ $c.muted }}",
+      base04 = "{{ $c.subtle }}",
+      base05 = "{{ $c.text }}",
+      base06 = "{{ $c.accent }}",
+      base07 = "{{ $c.highlight_high }}",
+      base08 = "{{ $c.red }}",
+      base09 = "{{ $c.yellow }}",
+      base0A = "{{ $c.yellow }}",
+      base0B = "{{ $c.green }}",
+      base0C = "{{ $c.teal }}",
+      base0D = "{{ $c.blue }}",
+      base0E = "{{ $c.purple }}",
+      base0F = "{{ $c.accent }}",
+    },
+  },
+})
+{{ end -}}
+vim.cmd("colorscheme {{ $n.name }}")

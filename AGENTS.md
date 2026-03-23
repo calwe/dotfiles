@@ -12,6 +12,7 @@ When working in this repository:
 - **DO NOT run `chezmoi apply`** - The user will run this themselves when ready
 - **DO NOT use `chezmoi edit`** - Edit source files directly in this repository instead
 - **When editing config files, edit the source files visible in this repo** (e.g., `dot_config/nvim/lua/plugins/telescope.lua`) rather than the target files in the home directory
+- **DO NOT use the question tool to ask "should I proceed with implementation?"** — If the user says to go ahead, just start implementing. The question tool puts the user back into plan mode, which is frustrating. Use the question tool only for genuine design/technical decisions during planning.
 
 ## Key Concepts
 

@@ -31,3 +31,8 @@ tmux:
   style:         ""
   vars:
     catppuccin_flavour: "mocha"
+
+waybar:
+  bg:    "#9399b2"   # subtle — periwinkle grey, mid-tone
+  text:  "#000000"
+  black: "#000000"

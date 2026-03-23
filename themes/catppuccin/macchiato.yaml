@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     catppuccin_flavour: "macchiato"
+
+waybar:
+  bg:    "#8087a2"   # subtle — steel blue-grey, mid-tone
+  text:  "#000000"
+  black: "#000000"

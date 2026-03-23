@@ -31,3 +31,8 @@ tmux:
   style:         ""
   vars:
     rose_pine_variant: "dawn"
+
+waybar:
+  bg:    "#dfdad9"   # highlight_mid — warm linen, light theme
+  text:  "#000000"
+  black: "#000000"

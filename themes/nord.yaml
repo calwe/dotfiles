@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#7b97b8"   # between subtle and accent — cool nord blue, mid-tone
+  text:  "#000000"
+  black: "#000000"

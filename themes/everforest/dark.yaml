@@ -30,3 +30,8 @@ tmux:
   use_evergarden: true
   style:         "winter"
   vars:          {}
+
+waybar:
+  bg:    "#859289"   # subtle — mid-tone sage, good contrast with black text
+  text:  "#000000"
+  black: "#000000"

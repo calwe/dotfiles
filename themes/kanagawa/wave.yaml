@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     kanagawa_theme: "wave"
+
+waybar:
+  bg:    "#727169"   # muted — warm stone grey, mid-tone
+  text:  "#000000"
+  black: "#000000"

@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     tmux-gruvbox: "light"
+
+waybar:
+  bg:    "#d5c4a1"   # highlight_high — warm cream, light gruvbox
+  text:  "#000000"
+  black: "#000000"

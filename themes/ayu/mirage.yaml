@@ -31,3 +31,8 @@ tmux:
   use_evergarden: false
   style: ""
   vars: {}
+
+waybar:
+  bg:    "#707a8c"   # muted — ayu mirage blue-grey, mid-tone
+  text:  "#000000"
+  black: "#000000"

@@ -32,3 +32,8 @@ tmux:
   style: ""
   vars:
     catppuccin_flavour: "frappe"
+
+waybar:
+  bg:    "#838ba7"   # subtle — slate blue, mid-tone
+  text:  "#000000"
+  black: "#000000"
