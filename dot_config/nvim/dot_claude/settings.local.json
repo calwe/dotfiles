@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvim --headless -c 'help vim.pack.add' -c q)",
+      "Bash(cat /home/callum/.local/share/nvim/site/pack/core/opt/base16-nvim/plugin/*.vim)"
+    ]
+  }
+}

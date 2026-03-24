@@ -30,7 +30,7 @@ packages:
     - 'python-black'
     - 'tree-sitter-cli'
     aur:
-    - 'neovim-git'
+    - 'neovim-nightly-bin'
     - 'zen-browser-bin'
     - 'chromium-widevine'
     - 'emmet-language-server'

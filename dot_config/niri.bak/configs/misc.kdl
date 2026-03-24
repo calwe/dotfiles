@@ -1,0 +1,28 @@
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}

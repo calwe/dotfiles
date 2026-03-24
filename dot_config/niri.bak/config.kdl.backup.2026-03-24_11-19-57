@@ -1,0 +1,17 @@
+// DMS-managed (do not edit manually)
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
+include "dms/cursor.kdl"
+
+// Custom configuration
+include "configs/environment.kdl"
+include "configs/input.kdl"
+include "configs/layout.kdl"
+include "configs/binds.kdl"
+include "configs/window-rules.kdl"
+include "configs/animations.kdl"
+include "configs/misc.kdl"
+
+// Machine-specific outputs
+include "configs/SCLT465_outputs.kdl"

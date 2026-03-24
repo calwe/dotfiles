@@ -1,0 +1,20 @@
+name: odin-visa
+
+on_project_start: >
+  if ! mountpoint -q ~/dssg; then
+    sshfs mtt45719@te7aegnode02:/u/mtt45719/ /home/callum/dssg -o uid=1000 -o gid=1000 -o follow_symlinks && 
+    while ! mountpoint -q /home/callum/dssg; do sleep 0.5; done
+  fi &&
+  cd /home/callum/dssg/dev/odin-visa/
+pre_window: "source /home/callum/dssg/dev/.venv/bin/activate"
+
+windows:
+  - editor: nvim
+  - odin-control:
+      layout: even-horizontal
+      panes:
+        - "ssh te7aegnode02 -qt 'source /u/mtt45719/dev/.venv/bin/activate && cd /u/mtt45719/dev/odin-visa && bash'"
+        - posting --collection posting-collection --env posting-collection/posting.env
+  - frontend: "ssh te7aegnode02 -qt 'source /u/mtt45719/dev/.venv/bin/activate && cd /u/mtt45719/dev/odin-visa/react/app && module load nodejs && npm run dev; bash'"
+  - opencode: opencode
+

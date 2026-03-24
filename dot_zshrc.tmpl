@@ -25,6 +25,8 @@ plugins=(
 {{- if eq .chezmoi.hostname "SCLT465" }}
 # Work machine configuration
 export REPOS_ROOT_DIR="/home/callum/isis"
+export SSH_KEYS=(~/.ssh/id_ed25519 ~/.ssh/id_ed25519_calwe)
+
 alias dci="docker compose -f ~/isis/docker-orchestration/docker-compose-linux.yml"
 {{- end }}
 
@@ -212,6 +214,12 @@ qfind() {
 # Chezmoi add and edit
 czae() {
   chezmoi add "$1" && chezmoi edit "$1"
+}
+
+ssh-aadd() {
+  for key in "${SSH_KEYS[@]}"; do
+    ssh-add "$key"
+  done
 }
 
 # ============================================

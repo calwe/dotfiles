@@ -1,0 +1,29 @@
+font_family "BerkeleyMonoVariable Nerd Font"
+font_size   14.0
+
+enable_audio_bell no
+
+foreground            #d3c6aa
+background            #272e33
+cursor                #a7c080
+cursor_text_color     #272e33
+selection_foreground  #d3c6aa
+selection_background  #414b50
+url_color             #83c092
+
+color0   #272e33
+color1   #e67e80
+color2   #a7c080
+color3   #dbbc7f
+color4   #7fbbb3
+color5   #d699b6
+color6   #83c092
+color7   #859289
+color8   #374145
+color9   #e67e80
+color10  #a7c080
+color11  #dbbc7f
+color12  #7fbbb3
+color13  #d699b6
+color14  #83c092
+color15  #d3c6aa
